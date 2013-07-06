@@ -1,0 +1,7 @@
+<% if signed_in? %>
+	<div id="admin-header">
+		Admin View: Logged in as <%= current_user.email %> <br>
+		<%= link_to "Admin Tools", admin_path %> |
+		<%= link_to "Sign out", signout_path, method: "delete" %>
+	</div>
+<% end %>

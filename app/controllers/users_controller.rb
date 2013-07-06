@@ -1,15 +1,27 @@
 class UsersController < ApplicationController
+	load_and_authorize_resource
+	
 	def new
-		@user = User.new
 	end
 
 	def create
-		@user = User.new(params[:user])
 		if @user.save
-			sign_in @user
-			redirect_to root_path, notice: "User Created"
+			redirect_to admin_path, notice: "User Sucessfully Created: #{@user.email}"
 		else
 			render 'new'
 		end
 	end	
+
+	def show		
+	end
+
+	def edit	
+	end
+
+	def update		
+	end
+
+	def index
+		@users = User.all
+	end
 end

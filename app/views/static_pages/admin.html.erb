@@ -1,0 +1,27 @@
+<% provide(:title, "Admin Tools") %>
+<h1>Admin Tools</h1>
+<%= link_to "Manage Events", "#" %>
+<hr>
+<h3>SCSF Board Members</h3>
+<table cellpadding="5" border="1" cellspacing="1">
+	<tr>
+		<td><strong>Name</strong></td>
+		<td><strong>Postition</strong></td>
+		<td><strong>Email Address</strong></td>
+		<td><strong>Member Since</strong></td>
+		<td></td>
+	</tr>
+	<% @users.each do |user| %>
+		<tr>
+			<td><%= user.email %></td>
+			<td></td>
+			<td></td>
+			<td align="center">2003</td>
+			<td><%= link_to "View", user_path(user) %></td>
+		</tr>
+	<% end %>
+</table>
+<% if can? :create, @user %>
+	<%= link_to "Add New User", adduser_path %>
+<% end %>
+<hr>

@@ -4,41 +4,55 @@ describe "User pages" do
 
   subject { page }
 
-  describe "signup page" do
-    before { visit signup_path }
+  describe "visit new account page" do
 
-    it { should have_selector('h1',    text: 'Create Account') }
-    it { should have_selector('title', text: full_title('Create Account')) }
-  end
+    describe "as non admin" do
+      before { visit adduser_path }
 
-  describe "signup" do
-    before { visit signup_path }
-    let(:submit) { "Create Account" }
-
-    describe "with invalid information" do
-      it "should not create a user" do
-        expect { click_button submit }.not_to change(User, :count)
-      end
+      it { should have_selector('h1', text: "Admin Login") }
+      it { should have_selector('div.alert.alert-error', text: 'Access denied') }
     end
 
-    describe "with valid information" do
+    describe "as admin" do
+      let(:admin) { FactoryGirl.create(:admin) }
+      let(:submit) { "Create Account" }
       before do
-        fill_in "First name",		with: "FirstName"
-        fill_in "Last name",		with: "LastName"
-        fill_in "Email",				with: "user@example.com"
-        fill_in "Password",			with: "foobar"
-        fill_in "Password confirmation",	with: "foobar"
+        visit signin_path
+        fill_in "Email",    with: admin.email
+        fill_in "Password", with: admin.password
+        click_button "Sign in"
+        visit adduser_path
       end
 
-      it "should create a user" do
-        expect { click_button submit }.to change(User, :count).by(1)
+      it { should have_selector('h1', text: "Add User Account") }
+
+      describe "with invalid information" do
+        it "should not create a user" do
+          expect { click_button submit }.not_to change(User, :count)
+        end
       end
 
-      describe "after saving the user" do
-        before { click_button submit }
-        let(:user) { User.find_by_email('user@example.com') }
-        it { should have_link('Sign out') }
-      end 
+      describe "with valid information" do
+        before do
+          fill_in "First name",   with: "FirstName"
+          fill_in "Last name",    with: "LastName"
+          fill_in "Email",        with: "user@example.com"
+          fill_in "Password",     with: "foobar"
+          fill_in "Password confirmation",  with: "foobar"
+        end
+
+        it "should create a user" do
+          expect { click_button submit }.to change(User, :count).by(1)
+        end
+
+        describe "after saving the user" do
+          before { click_button submit }
+          let(:user) { User.find_by_email('user@example.com') }
+
+          it { should have_selector('h1', text: "Admin Tools") }
+          it { should have_selector('div.alert.alert-notice', text: 'User Sucessfully Created: user@example.com') }
+        end 
+      end
     end
   end
 end

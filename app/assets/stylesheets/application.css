@@ -11,3 +11,10 @@
  *= require_self
  *= require_tree .
  */
+
+#admin-header {
+	padding: 5px;
+	text-align: center;
+	background-color: #dddddd;
+	border: 1px solid #999999; 
+}

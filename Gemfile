@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 gem 'bcrypt-ruby', '3.0.1'
+gem "cancan"
 
 group :test do
   gem 'capybara', '1.1.2'
