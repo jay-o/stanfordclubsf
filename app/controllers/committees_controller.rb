@@ -15,6 +15,13 @@ class CommitteesController < ApplicationController
   end
 
   def update
+    if @committee.update_attributes(params[:event])
+      flash[:notice] = "Committee Updated"
+      redirect_to @committee
+    else  
+      flash[:notice] = "Committee NOT Updated"
+      render 'edit'
+    end
   end
 
   def index

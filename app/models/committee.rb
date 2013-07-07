@@ -1,5 +1,5 @@
 class Committee < ActiveRecord::Base
-  attr_accessible :description, :name
+  attr_accessible :description, :name, :slug
 
   has_many :events
 

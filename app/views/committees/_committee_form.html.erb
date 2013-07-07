@@ -1,0 +1,12 @@
+<%= simple_form_for @committee do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+		
+	<% if current_user.admin? %>
+		<%= f.input :name %>
+		<%= f.input :slug %>
+	<% end %>
+	<%= f.input :description %>
+	
+
+	<div class="actions"><%= f.submit %></div>
+<% end %>

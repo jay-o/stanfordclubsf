@@ -21,7 +21,8 @@ class Event < ActiveRecord::Base
 	      					:last_updated_by,
 	                :event_state_id,
 	                :longitude,
-	                :latitude
+	                :latitude,
+	                :slug
 
   belongs_to	:event_state
   belongs_to 	:committee

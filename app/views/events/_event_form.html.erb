@@ -20,8 +20,6 @@
 	<%= f.input :sold_out %>
 	<% if current_user.admin? %>
 		<%= f.input :slug %>
-	<% else %>
-		<%= f.input :slug, :readonly => true %>
 	<% end %>
 
 	<div class="actions"><%= f.submit %></div>
