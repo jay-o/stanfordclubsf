@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails',        '3.2.13'
 gem 'bcrypt-ruby',  '3.0.1'
-gem "cancan",        '1.6.10'
-gem 'simple_form',    '2.1.0'
+gem "cancan",       '1.6.10'
+gem 'simple_form',  '2.1.0'
 gem 'geocoder'
 
 group :test do
@@ -37,4 +37,5 @@ end
 
 group :production do
   gem 'pg', '0.12.2'
+  gem "unicorn", '4.6.3'
 end
