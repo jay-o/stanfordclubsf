@@ -6,16 +6,22 @@ class Ability
     if user.admin?                      # if admin, can do everything
       can :manage, :all
       can :admin, :staticpage
+    
     elsif user.id != nil                # if signed in user, can access: /change this to boolean active in user model
       can :admin, :staticpage           # can view the admin dashboard
-      can :read, User                   # can view users
-      can :manage, Event                # can manage events
-      cannot :destroy, Event            # - but can't delete them
-      can :update, User do |user_page|  # can update your own record
-        user_page == user               
-      end
+      can :read,    User                 
+      can :update,  User do |user_page|  # can update your own record
+          user_page == user               
+        end
+      can :create,  Event
+      can :read,    Event
+      can :update,  Event
+      can :read,    Committee
+      can :update,  Committee
+    
     else
       can :read, Event
+      can :read, Committee
     end
 
     # Define abilities for the passed in user here. For example:

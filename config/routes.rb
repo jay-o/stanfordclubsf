@@ -9,6 +9,9 @@ Stanfordclubsf::Application.routes.draw do
   # Events  
   resources :events
 
+  # Committees
+  resources :committees
+
   # Sessions
   resources :sessions, only: [:new, :create, :destroy]
   match '/adduser',  to: 'users#new'

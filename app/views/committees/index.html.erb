@@ -1,0 +1,6 @@
+<h1>Committees</h1>
+<ol>
+	<% @committees.each do |committee| %>
+		<li><%= link_to committee.name, committee %></li>
+	<% end %>
+</ol>

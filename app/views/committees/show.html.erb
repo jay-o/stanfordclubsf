@@ -1,0 +1,6 @@
+<% provide(:title, @committee.name ) %>
+<h1><%= @committee.name %></h1>
+<p><%= @committee.description %></p>
+<% if can? :update, @committee %>
+	<p><%= link_to "Edit Committee", edit_committee_path(@committee) %></p>
+<% end %>
