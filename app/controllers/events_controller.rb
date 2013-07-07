@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
-  load_and_authorize_resource
+  authorize_resource
+  before_filter :find_page, only: [:show, :edit, :update, :destroy]
 
   def new
   end
@@ -24,5 +25,11 @@ class EventsController < ApplicationController
   end
 
   def index
+    @events = Event.all
+  end
+
+private
+  def find_page
+    @event = Event.find_by_slug(params[:id])
   end
 end

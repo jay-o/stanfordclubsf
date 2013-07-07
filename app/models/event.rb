@@ -23,25 +23,33 @@ class Event < ActiveRecord::Base
 	                :longitude,
 	                :latitude
 
-
   belongs_to	:event_state
   belongs_to 	:committee
 
-  validates :name, presence: true, :if => :draft?
+  before_validation :generate_slug
+  validates	:slug, presence: true, uniqueness: true
 
+  # Draft Validations
+  validates :name, :committee_id, presence: true
+
+  # Publish Validations
   validates :name, presence: true, :if => :published?
   validates :description, presence: true, length: { minimum: 25 }, :if => :published?
-  validates :start_date, :start_time, :address, :committee_id, :cost_member, :cost_guest, :organizer, presence: true, :if => :published?
+  validates :start_date, :start_time, :address, :cost_member, :cost_guest, :organizer, presence: true, :if => :published?
 
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
 
+  def to_param
+    slug
+  end
+
+  def generate_slug
+    self.slug ||= name.parameterize
+  end
+
 private
    def published?
       event_state_id == 1
-   end
-
-   def draft?
-      event_state_id == 2
    end
 end

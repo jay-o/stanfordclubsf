@@ -17,6 +17,7 @@ FactoryGirl.define do
   end
 
   factory :event do
-    name  "First Event"
+    name  "Test Event"
+    committee_id "1"
   end
 end

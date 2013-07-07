@@ -1,23 +1,28 @@
 <%= simple_form_for @event do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-    
-    <%= f.input :name %>
-		<%= f.input :start_date %>
-		<%= f.input :start_time %>
-		<%= f.input :end_date %>
-		<%= f.input :end_time %>
-		<%= f.input :address %>
-    <%= f.association :event_state %>
-    <%= f.association :committee %>
-    <%= f.input :registration_url %>
-    <%= f.input :description %>
-    <%= f.input :capacity %>
-    <%= f.input :organizer %>
-    <%= f.input :organizer_email %>
-    <%= f.input :created_by %>
-    <%= f.input :last_updated_by %>
-		<%= f.input :featured %>
-		<%= f.input :sold_out %>
+	<%= render 'shared/error_messages', object: f.object %>
+		
+	<%= f.input :name %>
+	<%= f.input :start_date %>
+	<%= f.input :start_time %>
+	<%= f.input :end_date %>
+	<%= f.input :end_time %>
+	<%= f.input :address %>
+	<%= f.association :event_state %>
+	<%= f.association :committee %>
+	<%= f.input :registration_url %>
+	<%= f.input :description %>
+	<%= f.input :capacity %>
+	<%= f.input :organizer %>
+	<%= f.input :organizer_email %>
+	<%= f.input :created_by %>
+	<%= f.input :last_updated_by %>
+	<%= f.input :featured %>
+	<%= f.input :sold_out %>
+	<% if current_user.admin? %>
+		<%= f.input :slug %>
+	<% else %>
+		<%= f.input :slug, :readonly => true %>
+	<% end %>
 
-  <div class="actions"><%= f.submit %></div>
+	<div class="actions"><%= f.submit %></div>
 <% end %>
