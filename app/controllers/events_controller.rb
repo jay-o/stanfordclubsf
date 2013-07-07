@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   authorize_resource
-  before_filter :find_page, only: [:show, :edit, :update, :destroy]
+  before_filter :find_page
 
   def new
   end

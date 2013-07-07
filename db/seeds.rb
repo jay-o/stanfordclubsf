@@ -52,7 +52,7 @@ Committee.create!([
 		description: "Speaker Events brings you engaging events with Stanford's rockstar professors, provides forum for learning about current issues."
 		},
 	{ 
-		name: "Sports & Rec",
+		name: "Sports & Recreation",
 		description: "Sports and Recreation brings you hikes all around the Bay Area including San Anselmo, Mt. Tam, jogs in the Bay Area."
 		}
 ])

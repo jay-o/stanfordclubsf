@@ -1,6 +1,7 @@
 class CommitteesController < ApplicationController
-  load_and_authorize_resource
-   
+  authorize_resource
+  before_filter :find_page
+
   def new
   end
 
@@ -18,5 +19,10 @@ class CommitteesController < ApplicationController
 
   def index
     @committees = Committee.all
+  end
+
+private
+  def find_page
+    @committee = Committee.find_by_slug(params[:id])
   end
 end
