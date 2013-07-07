@@ -22,6 +22,7 @@ class Ability
     else
       can :read, Event
       can :read, Committee
+      cannot :index, Event
     end
 
     # Define abilities for the passed in user here. For example:

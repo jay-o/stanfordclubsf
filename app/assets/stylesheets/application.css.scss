@@ -12,9 +12,34 @@
  *= require_tree .
  */
 
+ /* Layout */
+ footer {
+ 	margin: 25px;
+ 	text-align: center;
+ }
+
 #admin-header {
 	padding: 5px;
 	text-align: center;
 	background-color: #dddddd;
 	border: 1px solid #999999; 
+}
+
+table.admin {
+	border-collapse: collapse;
+	th {
+		text-align: left;
+	}
+	td {
+		padding: 7px;
+		list-style: none;
+		border-top: 1px solid black;
+	}
+	.row:nth-child(even) {
+		background-color: #f5f5f5;
+	}
+	.row:nth-child(even):hover,
+	.row:nth-child(odd):hover {
+		background-color: #fffff0;
+	}
 }

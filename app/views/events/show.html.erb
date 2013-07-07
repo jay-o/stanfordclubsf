@@ -1,7 +1,16 @@
 <% provide(:title, @event.name ) %>
 <h1><%= @event.name %></h1>
+<% if signed_in? %>
+Admin Details
 <p>
-	<%= @event.event_state.name unless @event.event_state_id == nil %> <br>
+	Event State: <%= @event.event_state.name.to_s %> <br>
+	Last Updated: <%= @event.updated_at %> by name <br>
+	Created By: <%= @event.created_by %> 
+</p>
+<% end %>
+
+<p>
+	 <br>
 	<%= @event.committee.name unless @event.committee_id == nil %>
 </p>
 <p>

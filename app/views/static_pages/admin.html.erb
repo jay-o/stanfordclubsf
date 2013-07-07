@@ -1,28 +1,62 @@
 <% provide(:title, "Admin Tools") %>
 <h1>Admin Tools</h1>
-<%= link_to "Manage Events", events_path %> | 
-<%= link_to "Manage Committees", committees_path %>
-<hr>
-<h3>SCSF Board Members</h3>
-<table cellpadding="5" border="1" cellspacing="1">
+<h3>Manage Upcoming Events</h3>
+<%= link_to "Add New Event", new_event_path %>
+<table cellpadding="5" cellspacing="0" border="0" class="admin">
 	<tr>
-		<td><strong>Name</strong></td>
-		<td><strong>Postition</strong></td>
-		<td><strong>Email Address</strong></td>
-		<td><strong>Member Since</strong></td>
-		<td></td>
+		<th>Event</th>
+		<th>Committee</th>
+		<th>Date</th>
+		<th></th>
+		<th></th>
 	</tr>
-	<% @users.each do |user| %>
-		<tr>
-			<td><%= user.email %></td>
+	<% @events.each do |event| %>
+		<tr class="row">
+			<td><%= link_to event.name, event %></td>
+			<td><%= event.committee.name %></td>
 			<td></td>
 			<td></td>
-			<td align="center">2003</td>
-			<td><%= link_to "View", user_path(user) %></td>
 		</tr>
 	<% end %>
+	<tr>
+		<td colspan="5">
+			<%= link_to "See All Events", events_path %>
+		</td>
+	</tr>
 </table>
+
+<br>
+<hr>
+<br>
+
+<h3>Active SCSF Board Members</h3>
 <% if can? :create, @user %>
 	<%= link_to "Add New User", adduser_path %>
-<% end %>
+<% end %>		
+<table cellpadding="5" cellspacing="0" border="0" class="admin">
+	<tr>
+		<th>Name</th>
+		<th>Postition</th>
+		<th>Email Address</th>
+		<th>Member Since</th>
+	</tr>
+	<% @users.each do |user| %>
+		<tr class="row">
+			<td><%= link_to "#{user.first_name} #{user.last_name}", user_path(user) %></td>
+			<td></td>
+			<td><%= user.email %></td>
+			<td align="center">2003</td>
+		</tr>
+	<% end %>
+	<tr>
+		<td colspan="4">
+			<%= link_to "See All Users", users_path %>
+		</td>
+	</tr>
+</table>
+
+<br>
 <hr>
+<br>
+
+<%= link_to "Manage Committees", committees_path %>

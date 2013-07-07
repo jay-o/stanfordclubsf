@@ -18,7 +18,7 @@
 	<%= f.input :last_updated_by %>
 	<%= f.input :featured %>
 	<%= f.input :sold_out %>
-	<% if current_user.admin? %>
+	<% if controller.action_name != 'new' && current_user.admin? %>
 		<%= f.input :slug %>
 	<% end %>
 

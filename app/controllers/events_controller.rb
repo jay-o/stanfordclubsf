@@ -3,9 +3,17 @@ class EventsController < ApplicationController
   before_filter :find_page
 
   def new
+    @event = Event.new
   end
 
   def create
+    @event = Event.new(params[:event])
+    if @event.save
+      flash[:notice] = "Event Sucessfully Created: #{@event.name}"
+      redirect_to admin_path
+    else
+      render 'new'
+    end
   end
 
   def show
