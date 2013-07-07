@@ -56,3 +56,18 @@ Committee.create!([
 		description: "Sports and Recreation brings you hikes all around the Bay Area including San Anselmo, Mt. Tam, jogs in the Bay Area."
 		}
 ])
+
+EventState.create!([
+	{
+		name: "Published",
+		name_order: 3
+	},
+	{
+		name: "Draft",
+		name_order: 2
+	},
+	{
+		name: "Removed",
+		name_order: 1
+	}
+])

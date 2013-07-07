@@ -8,6 +8,9 @@ end
 def make_events
   10.times do #|n|
     name  = Faker::Name.name
-    Event.create!(name: name)
+    desc 	= Faker::Lorem.paragraph(sentence_count = 5, supplemental = false)
+    Event.create!(	name: name,
+    								description: desc
+    	)
   end
 end

@@ -1,5 +1,13 @@
 <% provide(:title, @event.name ) %>
 <h1><%= @event.name %></h1>
+<p>
+	<%= @event.event_state.name unless @event.event_state_id == nil %> <br>
+	<%= @event.committee.name unless @event.committee_id == nil %>
+</p>
+<p>
+	Description: <br>
+	<%= @event.description %>
+</p>
 <% if can? :update, @event %>
 	<p><%= link_to "Edit Event", edit_event_path(@event) %></p>
 <% end %>

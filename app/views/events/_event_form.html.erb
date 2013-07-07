@@ -1,9 +1,22 @@
-<%= form_for @event do |f| %>
+<%= simple_form_for @event do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-	<div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
+    
+    <%= f.input :name %>
+		<%= f.input :start_date %>
+		<%= f.input :start_time %>
+		<%= f.input :end_date %>
+		<%= f.input :end_time %>
+    <%= f.association :event_state %>
+    <%= f.association :committee %>
+    <%= f.input :registration_url %>
+    <%= f.input :description %>
+    <%= f.input :capacity %>
+    <%= f.input :organizer %>
+    <%= f.input :organizer_email %>
+    <%= f.input :created_by %>
+    <%= f.input :last_updated_by %>
+		<%= f.input :featured %>
+		<%= f.input :sold_out %>
 
   <div class="actions"><%= f.submit %></div>
 <% end %>
