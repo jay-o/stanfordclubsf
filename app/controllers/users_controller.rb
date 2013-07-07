@@ -6,7 +6,8 @@ class UsersController < ApplicationController
 
 	def create
 		if @user.save
-			redirect_to admin_path, notice: "User Sucessfully Created: #{@user.email}"
+			flash[:notice] = "User Sucessfully Created: #{@user.email}"
+			redirect_to admin_path
 		else
 			render 'new'
 		end
@@ -18,7 +19,13 @@ class UsersController < ApplicationController
 	def edit	
 	end
 
-	def update		
+	def update
+		if @user.update_attributes(params[:user])
+      flash[:notice] = "Profile updated"
+      redirect_to admin_path
+    else
+      render 'edit'
+    end
 	end
 
 	def index

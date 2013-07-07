@@ -5,6 +5,7 @@ class Ability
     user ||= User.new                   # guest user (not logged in)
     if user.admin?                      # if admin, can do everything
       can :manage, :all
+      can :admin, :staticpage
     elsif user.id != nil                # if signed in user, can access: /change this to boolean active in user model
       can :admin, :staticpage           # can view the admin dashboard
       can :read, User                   # can view users

@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_secure_password
   
   before_save { |user| user.email = email.downcase }
-  before_save :create_remember_token
+  before_create :create_remember_token
 
   validates :first_name,  presence: true
   validates :last_name,  presence: true
