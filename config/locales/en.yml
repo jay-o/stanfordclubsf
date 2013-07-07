@@ -3,6 +3,11 @@
 
 en:
   helpers:
-    submit:
-      create: "Create Account"
-      update: "Update User"
+    user:
+      submit:
+        create: "Create Account"
+        update: "Update User"
+    event:
+      submit:
+        create: "Create Account"
+        update: "Update User"

@@ -11,7 +11,35 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130705225354) do
+ActiveRecord::Schema.define(:version => 20130707010344) do
+
+  create_table "events", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.date     "start_date"
+    t.string   "start_time"
+    t.string   "end_date"
+    t.string   "end_time"
+    t.boolean  "featured"
+    t.boolean  "sold_out"
+    t.string   "cost_member"
+    t.string   "cost_young_alumn"
+    t.string   "cost_guest"
+    t.string   "capacity"
+    t.string   "organizer"
+    t.string   "organizer_email"
+    t.integer  "committee_id"
+    t.integer  "image_id"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.integer  "event_state_id",   :default => 2
+    t.string   "registration_url"
+    t.integer  "created_by"
+    t.integer  "last_updated_by"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "first_name"

@@ -6,6 +6,9 @@ Stanfordclubsf::Application.routes.draw do
   resources :users
   match '/signup',  to: 'users#new'
   
+  # Events  
+  resources :events
+
   # Sessions
   resources :sessions, only: [:new, :create, :destroy]
   match '/adduser',  to: 'users#new'

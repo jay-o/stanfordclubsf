@@ -1,0 +1,4 @@
+<h1><%= @event.name %></h1>
+<% if can? :update, @event %>
+	<p><%= link_to "Edit Event", edit_event_path(@event) %></p>
+<% end %>
