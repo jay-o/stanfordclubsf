@@ -24,7 +24,9 @@ describe "User pages" do
         visit adduser_path
       end
 
-      it { should have_selector('h1', text: "Add User Account") }
+      describe "going to add a new user" do
+        it { should have_selector('h1', text: "Add User Account") }
+      end
 
       describe "with invalid information" do
         it "should not create a user" do
@@ -47,7 +49,6 @@ describe "User pages" do
 
         describe "after saving the user" do
           before { click_button submit }
-          let(:user) { User.find_by_email('user@example.com') }
 
           it { should have_selector('h1', text: "Admin Tools") }
           it { should have_selector('div.alert.alert-notice', text: 'User Sucessfully Created: user@example.com') }
