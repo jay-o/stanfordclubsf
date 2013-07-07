@@ -20,13 +20,23 @@ describe User do
   it { should_not be_admin }
 
   # Admin check
-  describe "with admin attribute set to 'true'" do
+  describe "just created" do
+    before do
+      @user.save!
+    end
+
+    it { should_not be_admin }
+    its(:email) { should == 'user@example.com' }
+  end
+
+  describe "just created with admin attribute set to 'true'" do
     before do
       @user.save!
       @user.toggle!(:admin)
     end
 
     it { should be_admin }
+    its(:email) { should == 'user@example.com' }
   end
 
   # Basic Validations

@@ -1,1 +1,7 @@
 <h1>Home</h1>
+<h3>Upcoming Events</h3>
+<ol>
+	<% @events.each do |event| %>
+		<li><%= link_to event.name, event %></li>
+	<% end %>
+</ol>

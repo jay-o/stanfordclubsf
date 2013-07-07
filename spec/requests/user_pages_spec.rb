@@ -15,7 +15,7 @@ describe "User pages" do
 
     describe "as admin" do
       let(:admin) { FactoryGirl.create(:admin) }
-      let(:submit) { "Create Account" }
+      let(:submit) { "Create User" }
       before do
         visit signin_path
         fill_in "Email",    with: admin.email

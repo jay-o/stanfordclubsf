@@ -15,4 +15,8 @@ FactoryGirl.define do
     password_confirmation "foobar"
     admin      true
   end
+
+  factory :event do
+    name  "First Event"
+  end
 end
