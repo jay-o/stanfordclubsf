@@ -37,5 +37,4 @@ end
 
 group :production do
   gem 'pg', '0.12.2'
-  gem "unicorn", '4.6.3'
 end
