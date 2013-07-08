@@ -9,6 +9,7 @@ class CommitteesController < ApplicationController
   end
 
   def show
+    @upcoming_events = Event.where("start_date >= ?", Time.now.to_date ).where('committee_id = ?', @committee).order("start_date")
   end
 
   def edit

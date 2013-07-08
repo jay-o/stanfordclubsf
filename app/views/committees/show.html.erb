@@ -4,3 +4,5 @@
 <% if can? :update, @committee %>
 	<p><%= link_to "Edit Committee", edit_committee_path(@committee) %></p>
 <% end %>
+
+<%= render 'events/feed' %>

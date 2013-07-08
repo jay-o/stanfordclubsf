@@ -1,13 +1,7 @@
 <% provide(:title, @event.name ) %>
 <h1><%= @event.name %></h1>
-<% if signed_in? %>
-Admin Details
-<p>
-	Event State: <%= @event.event_state.name.to_s %> <br>
-	Last Updated: <%= @event.updated_at %> by name <br>
-	Created By: <%= @event.created_by %> 
-</p>
-<% end %>
+
+<%= render 'admin_details' %>
 
 <p>
 	 <br>
