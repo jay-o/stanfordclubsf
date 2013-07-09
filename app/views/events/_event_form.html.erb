@@ -14,13 +14,14 @@
 	<%= f.input :capacity %>
 	<%= f.input :organizer %>
 	<%= f.input :organizer_email %>
-	<%= f.input :created_by %>
-	<%= f.input :last_updated_by %>
 	<%= f.input :featured %>
 	<%= f.input :sold_out %>
-	<% if controller.action_name != 'new' && current_user.admin? %>
+	<% if controller.action_name == 'new' %>
+		<%= f.input :created_by, input_html: { value: "#{current_user.id}" } %>
+	<% elsif controller.action_name == 'edit' && current_user.admin? %>
+		<%= f.input :last_updated_by, input_html: { value: "#{current_user.id}" } %>
 		<%= f.input :slug %>
 	<% end %>
-
+	
 	<div class="actions"><%= f.submit %></div>
 <% end %>

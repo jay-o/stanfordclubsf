@@ -9,11 +9,11 @@
 	</tr>
 	<tr>
 		<td>Created:</td>
-		<td><%= @event.created_at.strftime("%A, %B %d at %l:%M:%S %P") %> by name </td>
+		<td><%= @event.created_at.strftime("%A, %B %d at %l:%M:%S %P") %> by <%= @event.created_by %> </td>
 	</tr>
 	<tr>
 		<td>Last Updated:</td>
-		<td><%= @event.updated_at.strftime("%A, %B %d at %l:%M:%S %P") %> by name</td>
+		<td><%= @event.updated_at.strftime("%A, %B %d at %l:%M:%S %P") %> by <%= @event.last_updated_by %></td>
 	</tr>
 </table>
 <% end %>

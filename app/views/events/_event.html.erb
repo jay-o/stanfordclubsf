@@ -1,20 +1,13 @@
-<h4>Upcoming Events</h4>
-<ol>
-	<% @upcoming_events.each do |event| %>
-		<li>
-			<p><%= link_to event.name, event %></p>
-			<p>
-				<strong>
-					<%= event.start_date.strftime("%A, %B %d") unless event.start_date == nil %> 
-					<%= event.start_time %> 
-					<% unless event.end_time.blank? %>  
-						&ndash; <%= event.end_time %>  
-					<% end %> 	
-				</strong> 
-				<br />
-				<strong>Committee</strong>: <%= event.committee.name %>
-			</p>
-			<p><%= event.description.truncate(150, :omission => '...') %></p>
-		</li>
-	<% end %>
-</ol>
+<p><%= link_to event.name, event %></p>
+<p>
+	<strong>
+		<%= event.start_date.strftime("%A, %B %d") unless event.start_date == nil %> 
+		<%= event.start_time %> 
+		<% unless event.end_time.blank? %>  
+			&ndash; <%= event.end_time %>  
+		<% end %> 	
+	</strong> 
+	<br />
+	<strong>Committee</strong>: <%= event.committee.name %>
+</p>
+<p><%= event.description.truncate(150, :omission => '...') %></p>
