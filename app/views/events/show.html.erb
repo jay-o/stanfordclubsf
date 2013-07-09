@@ -17,7 +17,3 @@
 <% if @event.longitude.present? && @event.latitude.present?  %>
 	<%= link_to image_tag("http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=13&markers=#{@event.latitude}%2C#{@event.longitude}"), "http://maps.google.com/maps?q=#{@event.latitude},#{@event.longitude}", :target => "blank" %>
 <% end %>
-
-<% if can? :update, @event %>
-	<p><%= link_to "Edit Event", edit_event_path(@event) %></p>
-<% end %>
