@@ -14,7 +14,7 @@
 		<tr class="row">
 			<td><%= link_to event.name, event %></td>
 			<td><%= event.committee.name %></td>
-			<td></td>
+			<td align="left"><%= event.start_date.strftime("%a, %b %e, %Y") %></td>
 			<td></td>
 		</tr>
 	<% end %>

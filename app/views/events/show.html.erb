@@ -4,16 +4,15 @@
 <%= render 'admin_details' %>
 
 <p>
-	 <br>
-	<%= @event.committee.name unless @event.committee_id == nil %>
+  <%= link_to @event.committee.name, committee_path(@event.committee) unless @event.committee_id == nil %>
 </p>
 <p>
-	Description: <br>
-	<%= @event.description %>
+  Description: <br>
+  <%= @event.description %>
 </p>
 
 <h3>Location</h3>
 <%= @event.address.to_s %> <br>
 <% if @event.longitude.present? && @event.latitude.present?  %>
-	<%= link_to image_tag("http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=13&markers=#{@event.latitude}%2C#{@event.longitude}"), "http://maps.google.com/maps?q=#{@event.latitude},#{@event.longitude}", :target => "blank" %>
+  <%= link_to image_tag("http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=13&markers=#{@event.latitude}%2C#{@event.longitude}"), "http://maps.google.com/maps?q=#{@event.latitude},#{@event.longitude}", :target => "blank" %>
 <% end %>

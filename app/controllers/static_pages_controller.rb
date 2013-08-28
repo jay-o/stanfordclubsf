@@ -9,7 +9,7 @@ class StaticPagesController < ApplicationController
 
   def admin
     	@users = User.all
-    	@events = Event.all
+    	@events = Event.order("start_date")
     	@committees = Committee.all
     	authorize! :admin, :staticpage 
   end

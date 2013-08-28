@@ -16,7 +16,7 @@ class CommitteesController < ApplicationController
   end
 
   def update
-    if @committee.update_attributes(params[:event])
+    if @committee.update_attributes(params[:committee])
       flash[:notice] = "Committee Updated"
       redirect_to @committee
     else  

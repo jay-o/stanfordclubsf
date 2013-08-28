@@ -4,6 +4,7 @@ class Committee < ActiveRecord::Base
   has_many :events
 
   before_validation :generate_slug
+  validates :slug, presence: true, uniqueness: true
   
   validates :name, :description, presence: true
   validates	:slug, presence: true, uniqueness: true
@@ -13,6 +14,6 @@ class Committee < ActiveRecord::Base
   end
 
   def generate_slug
-    self.slug = name.gsub("&", "and").parameterize
+    self.slug ||= name.gsub("&", "and").parameterize
   end
 end
