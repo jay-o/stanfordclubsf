@@ -10,6 +10,7 @@ class Event < ActiveRecord::Base
 	      					:committee_id,
 	      					:cost_member,
 	      					:cost_guest,
+                  :cost_young_alumn,
 	      					:capacity,
 	      					:committee_id,
 	      					:image_id,

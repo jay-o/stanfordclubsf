@@ -8,3 +8,19 @@ table.admin-details {
 	border: 1px solid #999;	
 	border-radius: 8px;
 }
+
+table.event-cost {
+  .label {
+    padding: 0;
+    font-weight: bold;
+  }
+  .member-type{
+    padding: 2px 10px;
+    text-align: left;
+  }
+  .cost {
+    padding: 2px 10px;
+    border : 1px solid red;
+    text-align: center;
+  }
+}

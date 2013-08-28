@@ -7,19 +7,22 @@
 		<th>Event</th>
 		<th>Committee</th>
 		<th>Date</th>
-		<th></th>
-		<th></th>
+		<th>Member Cost</th>
+		<th>Young Alumn Cost</th>
+		<th>Guest Cost</th>
 	</tr>
 	<% @events.each do |event| %>
 		<tr class="row">
 			<td><%= link_to event.name, event %></td>
 			<td><%= event.committee.name %></td>
 			<td align="left"><%= event.start_date.strftime("%a, %b %e, %Y") %></td>
-			<td></td>
+			<td align="center"><%= event.cost_member %></td>
+			<td align="center"><%= event.cost_young_alumn %></td>
+			<td align="center"><%= event.cost_guest %></td>
 		</tr>
 	<% end %>
 	<tr>
-		<td colspan="5">
+		<td colspan="6">
 			<%= link_to "See All Events", events_path %>
 		</td>
 	</tr>

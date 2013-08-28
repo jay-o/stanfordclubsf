@@ -2,15 +2,50 @@
 <h1><%= @event.name %></h1>
 
 <%= render 'admin_details' %>
+<br>
+<br>
 
-<p>
-  <%= link_to @event.committee.name, committee_path(@event.committee) unless @event.committee_id == nil %>
-</p>
-<p>
-  Description: <br>
-  <%= @event.description %>
-</p>
+<% if @event.committee_id != nil %>
+  <strong>Hosting Committee:</strong> <%= link_to @event.committee.name, committee_path(@event.committee) %> 
+<% end %>
 
+<br>
+
+<strong>Date:</strong> <%= @event.start_date.strftime("%A, %B %d, %Y") %> 
+<br>
+<strong>Time:</strong> <%= @event.start_time %> <%= "- #{@event.end_time}" unless @event.end_time == nil %>
+
+<table cellpadding="0" cellspacing="0" border="0" class="event-cost">
+  <tr>
+    <td class="label">Cost:</td>
+    <td class="member-type">SCSF Member</td>
+    <td class="cost"><%= @event.cost_member %></td>
+  </tr>
+  <% unless @event.cost_young_alumn.empty? %>
+    <tr>
+      <td></td>
+      <td class="member-type">Young Alumn</td>
+      <td class="cost"><%= @event.cost_young_alumn %></td>
+    </tr>
+  <% end %>
+  <% unless @event.cost_guest.empty? %>
+    <tr>
+      <td></td>
+      <td class="member-type">Guest</td>
+      <td class="cost"><%= @event.cost_guest %></td>
+    </tr>
+  <% end %>
+</table>
+<br>
+
+<strong>Details:</strong> <%= @event.description %>
+<br>
+<br>
+<strong>RSVP:</strong>
+<%= link_to @event.registration_url, @event.registration_url %>
+
+<br>
+<br>
 <h3>Location</h3>
 <%= @event.address.to_s %> <br>
 <% if @event.longitude.present? && @event.latitude.present?  %>

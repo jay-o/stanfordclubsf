@@ -4,16 +4,20 @@
 		<th colspan="2" align="left">Admin Details</th>
 	</tr>
 	<tr>
+		<td width="110">Event ID:</td>
+		<td><%= @event.id %></td>
+	</tr>
+	<tr>
 		<td width="110">Event State:</td>
 		<td><%= @event.event_state.name.to_s %></td>
 	</tr>
 	<tr>
 		<td>Created:</td>
-		<td><%= @event.created_at.strftime("%A, %B %d at %l:%M:%S %P") %> by <%= @event.created_by %> </td>
+		<td><%= @event.created_at.strftime("%a, %b %d at %l:%M%P") %> by <%= @event.created_by %> </td>
 	</tr>
 	<tr>
 		<td>Last Updated:</td>
-		<td><%= @event.updated_at.strftime("%A, %B %d at %l:%M:%S %P") %> by <%= @event.last_updated_by %></td>
+		<td><%= @event.updated_at.strftime("%a, %b %d at %l:%M%P") %> by <%= @event.last_updated_by %></td>
 	</tr>
 	<tr>
 		<td colspan=="2">
