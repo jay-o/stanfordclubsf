@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20130707182412) do
 
   create_table "committees", :force => true do |t|
     t.string   "name"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "slug"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20130707182412) do
     t.text     "description"
     t.date     "start_date"
     t.string   "start_time"
-    t.string   "end_date"
+    t.date     "end_date"
     t.string   "end_time"
     t.boolean  "featured"
     t.boolean  "sold_out"
@@ -60,13 +60,6 @@ ActiveRecord::Schema.define(:version => 20130707182412) do
   end
 
   add_index "events", ["slug"], :name => "index_events_on_slug"
-
-  create_table "images", :force => true do |t|
-    t.string   "name"
-    t.string   "image"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
 
   create_table "users", :force => true do |t|
     t.string   "first_name"

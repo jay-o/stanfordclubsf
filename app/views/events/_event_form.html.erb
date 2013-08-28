@@ -2,9 +2,9 @@
 	<%= render 'shared/error_messages', object: f.object %>
 		
 	<%= f.input :name %>
-	<%= f.input :start_date %>
+	<%= f.input :start_date, :as => :datepicker %>
 	<%= f.input :start_time %>
-	<%= f.input :end_date %>
+	<%= f.input :end_date,  :as => :datepicker %>
 	<%= f.input :end_time %>
 	<%= f.input :address %>
 	<%= f.association :event_state %>
