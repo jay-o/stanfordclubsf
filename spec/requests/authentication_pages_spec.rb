@@ -26,7 +26,7 @@ describe "Authentication" do
       it { should have_selector('div.alert.alert-error', text: 'Invalid email/password combination') }
 
       describe "after visiting another page" do
-        before { click_link "Home" }
+        before { visit root_path }
         it { should_not have_selector('div.alert.alert-error') }
       end
     end
