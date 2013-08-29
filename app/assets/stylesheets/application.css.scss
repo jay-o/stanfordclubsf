@@ -1,22 +1,11 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require jquery.ui.datepicker
- *= require_self
- *= require_tree .
- */
+@import "admin";
+@import "committees";
+@import "events";
 
- /* Layout */
-.body-container{
-  margin: 0 auto;
-  width: 80%;
+
+h1, h2, h3, h3, h4 {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #4D4F53;
 }
 
 a {
@@ -24,16 +13,65 @@ a {
 }
 
 header {
-  font-family: 'Crimson Text', serif;
-}
-
-h2, h3, h3, h4 {
-  font-family: 'Source Sans Pro', sans-serif;
-  color: #4D4F53;
+  h1 {
+    font-family: 'Crimson Text', serif;
+    color: #820000;
+    float: left;
+  }
 }
 
 footer {
   margin: 25px;
+  clear: both;
   text-align: center;
 }
+
+.body-container {
+  margin: 0 auto;
+  width: 80%;
+  clear: both;
+}
+.content {
+  clear: both;
+}
+.main-column {
+  float: left;
+  width: 66.5%;
+}
+.sidebar {
+  float: left;
+  width: 33.5%;
+}
+.widget {
+  margin: 10px 0;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.top-nav {
+  float: right;
+  li {
+    display: inline-block;
+    list-style-type: none;
+  }
+}
+
+.centering {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.btn {
+  margin: 10px auto;
+  padding: 8px 40px;
+  font-size: 20px;
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 20px;
+  letter-spacing: 1px;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  background-color: #8C1515;
+  display: inline-block;
+}  
 

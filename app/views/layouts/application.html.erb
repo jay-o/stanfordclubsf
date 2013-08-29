@@ -14,9 +14,19 @@
 <div class="body-container">
   <header>
     <h1>Stanford Club of San Francisco</h1>
+    <div class="top-nav">
+      <ul>
+        <li><%= link_to "Upcoming Events", root_path %> |</li>
+        <li><%= link_to "What We Do", "#" %> |</li>
+        <li><%= link_to "Leadership", "#" %> |</li>
+        <li><%= link_to "Join the Club", "#" %></li>
+      </ul>
+    </div>
   </header>
-  <%= render 'layouts/flash_messages' %>
-  <%= yield %>
+  <div class="content">
+    <%= render 'layouts/flash_messages' %>
+    <%= yield %>
+  </div>
 </div>
 
 <footer>

@@ -1,10 +1,4 @@
-// Place all the styles related to the events controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
-// Shared
 .date-icon {
   padding: 2px 5px;
   position: absolute;
@@ -17,21 +11,6 @@
   text-align: center;
 }
 
-.event-show {
-  .main-column {
-    float: left;
-    width: 66.5%;
-  }
-  .sidebar {
-    float: left;
-    width: 33.5%;
-  }
-  .btn {
-    padding: 10px 25px;
-    color: #fff;
-    background-color: #8C1515;
-  }
-}
 
 // event list in event/feed
 .event-feed {

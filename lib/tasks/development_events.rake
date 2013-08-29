@@ -13,7 +13,7 @@ end
 def make_events
   100.times do #|n|
     name        = Faker::Name.name
-    desc 	      = Faker::Lorem.paragraph(sentence_count = 5, supplemental = false)
+    desc        = Faker::Lorem.paragraph(sentence_count = 5, supplemental = false)
     committee   = (1..5).to_a.shuffle.first
     date        = Time.now + (60*60*24)*rand(-100..100)
     # start_time  = Time.at((Time.now).to_f*rand).strftime("%H:%m")
@@ -23,9 +23,11 @@ def make_events
     cost_guest  = (5..100).to_a.push("Free").shuffle.first
     cost_young_alumn = (5..100).to_a.push("").shuffle.first
     reg_url     = Faker::Internet.url
+    long        = Faker::Address.longitude
+    lat         = Faker::Address.latitude
      
-    Event.create!(	name: name,
-    								description:  desc,
+    Event.create!(  name: name,
+                    description:  desc,
                     committee_id: committee,
                     start_date:   date,
                     start_time:   start_time,
@@ -33,7 +35,9 @@ def make_events
                     cost_member:  cost_member,
                     cost_guest:   cost_guest,
                     cost_young_alumn: cost_young_alumn,
-                    registration_url: reg_url
-    	)
+                    registration_url: reg_url,
+                    longitude:    long,
+                    latitude:     lat
+      )
   end
 end

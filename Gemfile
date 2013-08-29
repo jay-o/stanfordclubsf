@@ -8,7 +8,6 @@ gem 'simple_form',  '2.1.0'
 gem 'geocoder'
 gem 'jquery-ui-rails'
 
-
 group :test do
   gem 'capybara',   '1.1.2'
   gem 'rb-fsevent', '0.9.1', :require => false
