@@ -2,6 +2,53 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
+// Shared
+.date-icon {
+  padding: 2px 5px;
+  position: absolute;
+  left: -60px;
+  top: 35px;
+  width: 30px;
+  height: 35px;
+  border: 2px solid black;
+  border-top: 9px solid black;
+  text-align: center;
+}
+
+.event-show {
+  .main-column {
+    float: left;
+    width: 66.5%;
+  }
+  .sidebar {
+    float: left;
+    width: 33.5%;
+  }
+  .btn {
+    padding: 10px 25px;
+    color: #fff;
+    background-color: #8C1515;
+  }
+}
+
+// event list in event/feed
+.event-feed {
+  .event {
+    padding: 10px 10px 60px 10px;
+    position: relative;
+    border-top: 1px solid #999;
+    &:nth-child(even) {
+    }
+    &:nth-child(odd) {
+      background-color: #f0f0f0;
+    }
+  }
+}
+
+
+// event show
 table.admin-details {
 	padding: 5px 10px;
 	background-color: #efefef;

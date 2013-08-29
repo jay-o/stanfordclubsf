@@ -1,11 +1,11 @@
 <h4>Upcoming Events</h4>
-<% if @upcoming_events.empty? %>	
-	<h3>No Upcoming Events at this time</h3>
-	<p>Have an idea for an event? Email us!</p>
+<% if @upcoming_events.empty? %>  
+  <h3>No Upcoming Events at this time</h3>
+  <p>Have an idea for an event? Email us!</p>
 <% else %>
-	<ol>
-		<% @upcoming_events.each do |event| %>
-			<li><%= render event %></li>
-		<% end %>
-	</ol>
+<div class="event-feed">
+  <% @upcoming_events.each do |event| %>
+  <div class="event"><%= render event %></div>
+  <% end %>
+</div>
 <% end %>

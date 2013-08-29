@@ -1,13 +1,17 @@
-<p><%= link_to event.name, event %></p>
-<p>
-	<strong>
-		<%= event.start_date.strftime("%A, %B %d") unless event.start_date == nil %> 
-		<%= event.start_time %> 
-		<% unless event.end_time.blank? %>  
-			&ndash; <%= event.end_time %>  
-		<% end %> 	
-	</strong> 
-	<br />
-	<strong>Committee</strong>: <%= event.committee.name %>
-</p>
-<p><%= event.description.truncate(150, :omission => '...') %></p>
+<span class="date-icon">
+  <%= event.start_date.strftime("%b") unless event.start_date == nil %>
+  <%= event.start_date.strftime("%d") unless event.start_date == nil %>
+</span>
+<h2><%= link_to event.name, event %></h2>
+<strong>
+  <%= event.start_date.strftime("%A, %B %d") unless event.start_date == nil %>,
+  <%= event.start_time %> 
+  <% unless event.end_time.blank? %>  
+    &ndash; <%= event.end_time %>  
+  <% end %>   
+</strong> 
+<br />
+<strong>Hosting Committee</strong>: <%= event.committee.name %>
+<br />
+<br />
+<strong>Details:</strong> <%= event.description %>
