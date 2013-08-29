@@ -21,6 +21,8 @@ Stanfordclubsf::Application.routes.draw do
   # Static Pages
   match '/admin', to: 'static_pages#admin'
   match '/about', to: 'static_pages#about'
+  match '/leadership', to: 'static_pages#leadership'
+  match '/join', to: 'static_pages#join'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

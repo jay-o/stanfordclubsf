@@ -4,8 +4,6 @@ class StaticPagesController < ApplicationController
     @upcoming_events = Event.where("start_date >= ?", Time.now.to_date ).order("start_date")
   end
 
-  def about
-  end
 
   def admin
     	@users = User.all
