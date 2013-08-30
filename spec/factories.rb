@@ -3,6 +3,8 @@ FactoryGirl.define do
     first_name 	"Jay"
     last_name 	"User"
     email 			"jay@test.com"
+    state       "Active"
+    committee_id "1"
     password 		"foobar"
     password_confirmation "foobar"
   end
@@ -11,6 +13,8 @@ FactoryGirl.define do
     first_name 	"Jay"
     last_name 	"User"
     email 			"jay@test.com"
+    committee_id "1"
+    state       "Active"
     password 		"foobar"
     password_confirmation "foobar"
     admin      true

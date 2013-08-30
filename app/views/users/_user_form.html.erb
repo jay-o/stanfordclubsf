@@ -4,11 +4,19 @@
   <%= f.input :first_name %>
   <%= f.input :last_name %>
   <%= f.input :email %>
-  <%= f.input :password %>
-  <%= f.input :password_confirmation %>
+  <%= f.input :position, collection: ["Committee Chair","Membership & Marketing","Newsletter Editor","Venue Director","President","VP of Events","Treasurer","Secretary","CIO"] %>
+  <%= f.association :committee %>
+  <% if current_user.admin? %>
+    <%= f.input :state, collection: ["Active", "Innactive"], :as => :radio_buttons %>
+  <% end %>
+  <% if controller.action_name == 'new' %>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation %>
+  <% end %>
 
   <div>
     Admin: <%= @user.admin %>
   </div>
   <div class="actions"><%= f.submit %></div>
 <% end %>
+

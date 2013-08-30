@@ -39,16 +39,16 @@
 <table cellpadding="5" cellspacing="0" border="0" class="admin">
 	<tr>
 		<th>Name</th>
-		<th>Postition</th>
 		<th>Email Address</th>
-		<th>Member Since</th>
+		<th>Postition</th>
+		<th>Committee</th>
 	</tr>
 	<% @users.each do |user| %>
 		<tr class="row">
 			<td><%= link_to "#{user.first_name} #{user.last_name}", user_path(user) %></td>
-			<td></td>
 			<td><%= user.email %></td>
-			<td align="center">2003</td>
+			<td><%= user.position %></td>
+			<td></td>
 		</tr>
 	<% end %>
 	<tr>

@@ -7,7 +7,7 @@ class Ability
       can :manage, :all
       can :admin, :staticpage
     
-    elsif user.id != nil                # if signed in user, can access: /change this to boolean active in user model
+    elsif user.id != nil                # if signed in user
       can :admin, :staticpage           # can view the admin dashboard
       can :read,    User                 
       can :update,  User do |user_page|  # can update your own record
