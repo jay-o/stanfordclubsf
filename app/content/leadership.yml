@@ -1,0 +1,48 @@
+# Team for Leadership Page
+committees:
+  arts:
+    name: "Arts, Culture, Science"
+    chairs: ["Jay", "Fiona"]
+  career:
+    name:   "Career Advancement"
+    chairs: ["Shawn Salmon"]
+  community:
+    name:   "Community Service & Philanthropy"
+    chairs: ["Julie Whitcomb","Adam Bad Wound"]
+  design:
+    name:   "Design & Innovation"
+    chairs: ["Jacky Chow", "Robert Ash"]
+  food:
+    name:   "Food & Wine"
+    chairs: ["Laurel Skurko", "Alejandra Villalobos"]
+  social:
+    name:   "Social & Networking"
+    chairs: ["Gaetano Squicciarini"]
+  speaker:
+    name:   "Speaker Events"
+    chairs: ["Alvin Barlian", "Olympia Nguyen"]
+  sports:
+    name:   "Sports & Recreation"
+    chairs: ["Nicholas Magguli"]
+
+directors:
+  newsletter: 
+    name:   "Newsletter Editor"
+    chairs: ["Emma Trotter" , "Ellen Huet", "Victor Liu"]
+  venues:
+    name:   "Venue Director" 
+    chairs: ["Greg Martellotto"]
+
+executive:
+  prez: 
+    name:   "President"
+    chairs: ["Nancy Taylor"]
+  events:
+    name:   "VP of Events" 
+    chairs: ["Marlayna Tuiasosopo"]
+  money:
+    name:   "Treasurer" 
+    chairs: ["Dan Sanchez"]
+  cio:
+    name:   "CIO" 
+    chairs: ["Jay Ottovegio"]
