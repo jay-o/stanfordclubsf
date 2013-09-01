@@ -89,7 +89,7 @@ describe "Authentication" do
     end
     
     it { should have_selector('p',    text: "Admin: true") }
-    it { should have_selector('div#admin-header', text: 'Admin View:') }
+    it { should have_selector('div.well', text: 'Admin View:') }
 
     describe "viewing admin page" do
       before { visit '/admin' }
@@ -106,9 +106,9 @@ describe "Authentication" do
     describe "viewing edit event page" do
       before { visit edit_event_path(event) }
 
-      it { should have_selector('h1',    text: event.name) }
-      it { should have_selector('title', text: event.name) }
-      it { should have_selector('input', value: "Edit Event") }
+      it { should have_selector('legend', text: event.name) }
+      it { should have_selector('title',  text: event.name) }
+      it { should have_selector('input',  value: "Edit Event") }
     end
   end
 
@@ -122,7 +122,7 @@ describe "Authentication" do
     end
     
     it { should have_selector('p',    text: "Admin: false") }
-    it { should have_selector('div#admin-header', text: 'Admin View:') }
+    it { should have_selector('div.well', text: 'Admin View:') }
 
     # user shoudn't be able to access create user page
     describe "viewing add user page" do

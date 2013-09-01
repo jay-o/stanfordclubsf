@@ -27,7 +27,7 @@ class EventsController < ApplicationController
       flash[:success] = "Event Updated"
       redirect_to @event
     else  
-      flash[:alert] = "Event Not Updated"
+      flash[:error] = "Event Not Updated"
       render 'edit'
     end
   end

@@ -1,32 +1,36 @@
-<%= simple_form_for @event do |f| %>
-	<%= render 'shared/error_messages', object: f.object %>
-		
-	<%= f.input :name %>
-	<%= f.input :start_date, :as => :datepicker %>
-	<%= f.input :start_time %>
-	<%= f.input :end_date,  :as => :datepicker %>
-	<%= f.input :end_time %>
-	<%= f.input :cost_member %>
-	<%= f.input :cost_young_alumn %>
-	<%= f.input :cost_guest %>
-	<%= f.input :address %>
-	<%= f.association :event_state %>
-	<%= f.association :committee %>
-	<%= f.input :registration_url %>
-	<%= f.input :description %>
-	<%= f.input :capacity %>
-	<%= f.input :organizer %>
-	<%= f.input :organizer_email %>
-	<%= f.input :featured %>
-	<%= f.input :sold_out %>
-	<% if controller.action_name == 'new' %>
-		<%= f.input :created_by, input_html: { value: "#{current_user.id}" } %>
-	<% elsif controller.action_name == 'edit' %>
-		<%= f.input :last_updated_by,:as => :hidden, input_html: { value: "#{current_user.id}" } %>	
-		<% if current_user.admin? %>
-			<%= f.input :slug %>
-		<% end %>
-	<% end %>
-	
-	<div class="actions"><%= f.submit %></div>
+<%= simple_form_for @event, :html => {:class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> Event: <%= @event.name %></legend>
+    <%= f.input :name %>
+    <%= f.input :start_date, :as => :datepicker %>
+    <%= f.input :start_time %>
+    <%= f.input :end_date,  :as => :datepicker %>
+    <%= f.input :end_time %>
+    <%= f.input :cost_member %>
+    <%= f.input :cost_young_alumn %>
+    <%= f.input :cost_guest %>
+    <%= f.input :address %>
+    <%= f.association :event_state %>
+    <%= f.association :committee %>
+    <%= f.input :registration_url %>
+    <%= f.input :description %>
+    <%= f.input :capacity %>
+    <%= f.input :organizer %>
+    <%= f.input :organizer_email %>
+    <%= f.input :featured %>
+    <%= f.input :sold_out %>
+    <% if controller.action_name == 'new' %>
+      <%= f.input :created_by, input_html: { value: "#{current_user.id}" } %>
+    <% elsif controller.action_name == 'edit' %>
+      <%= f.input :last_updated_by,:as => :hidden, input_html: { value: "#{current_user.id}" } %> 
+      <% if current_user.admin? %>
+        <%= f.input :slug %>
+      <% end %>
+    <% end %>
+    
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', @event, :class => 'btn' %>
+    </div>
+  </fieldset>
 <% end %>

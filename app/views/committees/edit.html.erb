@@ -1,2 +1,5 @@
-<h1>Edit: <%= @committee.name %></h1>
-<%= render 'committee_form' %>
+<% provide(:title, 'Edit Committee') %>
+<div class="row">
+  <div class="span6 offset3"><%= render 'committee_form' %></div>
+  <div class="span3"></div>
+</div>

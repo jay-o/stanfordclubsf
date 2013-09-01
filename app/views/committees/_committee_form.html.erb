@@ -1,12 +1,16 @@
-<%= simple_form_for @committee do |f| %>
-	<%= render 'shared/error_messages', object: f.object %>
-		
-	<% if current_user.admin? %>
-		<%= f.input :name %>
-		<%= f.input :slug %>
-	<% end %>
-	<%= f.input :description %>
-	
+<%= simple_form_for @committee, :html => {:class => 'form-horizontal' } do |f| %>  
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %>: <%= @committee.name %></legend>
+    <% if current_user.admin? %>
+      <%= f.input :name %>
+      <%= f.input :slug %>
+    <% end %>
+    <%= f.input :description %>
+    
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', @event, :class => 'btn' %>
+    </div>
 
-	<div class="actions"><%= f.submit %></div>
+  </fieldset>
 <% end %>
