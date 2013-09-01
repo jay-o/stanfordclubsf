@@ -5,6 +5,7 @@
 <table cellpadding="5" cellspacing="0" border="0" class="admin">
 	<tr>
 		<th>Event</th>
+		<th>Status</th>
 		<th>Committee</th>
 		<th>Date</th>
 		<th>Member Cost</th>
@@ -14,6 +15,7 @@
 	<% @events.each do |event| %>
 		<tr class="row">
 			<td><%= link_to event.name, event %></td>
+			<td><%= event.event_state.name %></td>
 			<td><%= event.committee.name %></td>
 			<td align="left"><%= event.start_date.strftime("%a, %b %e, %Y") %></td>
 			<td align="center"><%= event.cost_member %></td>
@@ -22,7 +24,7 @@
 		</tr>
 	<% end %>
 	<tr>
-		<td colspan="6">
+		<td colspan="7">
 			<%= link_to "See All Events", events_path %>
 		</td>
 	</tr>

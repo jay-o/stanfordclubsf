@@ -21,9 +21,11 @@
 	<%= f.input :sold_out %>
 	<% if controller.action_name == 'new' %>
 		<%= f.input :created_by, input_html: { value: "#{current_user.id}" } %>
-	<% elsif controller.action_name == 'edit' && current_user.admin? %>
-		<%= f.input :last_updated_by, input_html: { value: "#{current_user.id}" } %>
-		<%= f.input :slug %>
+	<% elsif controller.action_name == 'edit' %>
+		<%= f.input :last_updated_by,:as => :hidden, input_html: { value: "#{current_user.id}" } %>	
+		<% if current_user.admin? %>
+			<%= f.input :slug %>
+		<% end %>
 	<% end %>
 	
 	<div class="actions"><%= f.submit %></div>

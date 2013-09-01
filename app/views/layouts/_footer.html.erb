@@ -7,3 +7,9 @@
 <% else %>	
 	<%= link_to "Admin Login", signin_path %>
 <% end %>
+
+<%= debug(params) if Rails.env.development? %>
+
+<% if signed_in? && Rails.env.development? %>  
+  Current User: <%= current_user.id %> &ndash; Admin: <%= current_user.admin? %>
+<% end %>
