@@ -1,21 +1,31 @@
 FactoryGirl.define do
   factory :user do
-    first_name 	"Jay"
-    last_name 	"User"
-    email 			"jay@test.com"
+    first_name  "Regular"
+    last_name   "User"
+    email       "regularuser@test.com"
     state       "Active"
     committee_id "1"
-    password 		"foobar"
+    password    "foobar"
+    password_confirmation "foobar"
+  end
+
+  factory :old_user, class: User do
+    first_name  "Old"
+    last_name   "User"
+    email       "olduser@test.com"
+    state       "Innactive"
+    committee_id "1"
+    password    "foobar"
     password_confirmation "foobar"
   end
 
   factory :admin, class: User do
-    first_name 	"Jay"
-    last_name 	"User"
-    email 			"jay@test.com"
+    first_name  "Admin"
+    last_name   "User"
+    email       "admin@test.com"
     committee_id "1"
     state       "Active"
-    password 		"foobar"
+    password    "foobar"
     password_confirmation "foobar"
     admin      true
   end
@@ -23,5 +33,10 @@ FactoryGirl.define do
   factory :event do
     name  "Test Event"
     committee_id "1"
+  end
+
+  factory :committee do
+    name        "Test Committee"
+    description "This is a test committee"
   end
 end

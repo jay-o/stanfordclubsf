@@ -13,5 +13,12 @@
 require 'spec_helper'
 
 describe Committee do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before { @committee = FactoryGirl.create(:committee) }
+
+  subject { @committee }
+
+  it { should respond_to(:name) }
+  it { should respond_to(:description) }
+  it { should be_valid }
+
 end

@@ -5,6 +5,7 @@ describe "Authentication" do
   subject { page }
   let(:admin) { FactoryGirl.create(:admin) }
   let(:user) { FactoryGirl.create(:user) }
+  let(:old_user) { FactoryGirl.create(:old_user) }
   let(:event) { FactoryGirl.create(:event) }
 
   # Login Pages
@@ -15,21 +16,47 @@ describe "Authentication" do
     it { should have_selector('title', text: 'Admin Login') }
   end
 
-  # Login with bad info
+  # Login 
   describe "signin" do
     before { visit signin_path }
 
-    describe "with invalid information" do
+    # with bad info
+    describe "with no information" do
       before { click_button "Sign in" }
 
       it { should have_selector('title', text: 'Admin Login') }
       it { should have_selector('div.alert.alert-error', text: 'Invalid email/password combination') }
 
+      # tests flash message disappears
       describe "after visiting another page" do
         before { visit root_path }
         it { should_not have_selector('div.alert.alert-error') }
       end
     end
+
+    # signin with no account
+    describe "with bad information" do
+      before do 
+        fill_in "Email",  with: "noaccount@test.com"
+        click_button "Sign in"
+      end
+      
+      it { should have_selector('title', text: 'Admin Login') }
+      it { should have_selector('div.alert.alert-error', text: 'Invalid email/password combination') }
+    end
+
+    # signin with closed acount
+    describe "with old account" do
+      before do 
+        fill_in "Email",      with: old_user.email
+        fill_in "Password",   with: old_user.password
+        click_button "Sign in"
+      end
+      
+      it { should have_selector('title', text: 'Admin Login') }
+      it { should have_selector('div.alert.alert-error', text: 'Account no longer active') }
+    end
+
 
     # Login with good info
     describe "with valid information" do
@@ -97,7 +124,7 @@ describe "Authentication" do
     it { should have_selector('p',    text: "Admin: false") }
     it { should have_selector('div#admin-header', text: 'Admin View:') }
 
-    # user shoudn't be able to access page or create user
+    # user shoudn't be able to access create user page
     describe "viewing add user page" do
       before { visit adduser_path }
       
