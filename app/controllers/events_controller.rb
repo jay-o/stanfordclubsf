@@ -24,10 +24,10 @@ class EventsController < ApplicationController
 
   def update
     if @event.update_attributes(params[:event])
-      flash[:notice] = "Event Updated"
+      flash[:success] = "Event Updated"
       redirect_to @event
     else  
-      flash[:notice] = "Event NOT Updated"
+      flash[:alert] = "Event Not Updated"
       render 'edit'
     end
   end

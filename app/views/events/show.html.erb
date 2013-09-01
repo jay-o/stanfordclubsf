@@ -1,6 +1,6 @@
 <% provide(:title, @event.name ) %>
-<div class="event-show">
-  <div class="main-column">
+<div class="row">
+  <div class="span8">
     <h2><%= @event.name.titleize %></h2>
     <br>
     <% if @event.committee_id != nil %>
@@ -14,8 +14,8 @@
       <%= link_to image_tag("http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=13&markers=#{@event.latitude}%2C#{@event.longitude}"), "http://maps.google.com/maps?q=#{@event.address}", :target => "blank" %>
     <% end %>
   </div>
-  <div class="sidebar">
-    <div class="widget">
+  <div class="span4">
+    <div class="well">
       <%= @event.start_date.strftime("%A, %B %d, %Y") %> <br />
       <%= @event.start_time.upcase %> <%= "- #{@event.end_time.upcase}" unless @event.end_time == nil %>
       <br>
@@ -62,7 +62,7 @@
         <%= link_to "RSVP", @event.registration_url, class: 'btn' %>
       </div>
     </div>
-    <div class="widget">
+    <div class="well">
       <%= render 'shared/join_scsf' %>
     </div>
     <%= render 'admin_details' %>

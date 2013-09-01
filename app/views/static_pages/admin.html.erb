@@ -2,32 +2,36 @@
 <h1>Admin Tools</h1>
 <h3>Manage Upcoming Events</h3>
 <%= link_to "Add New Event", new_event_path %>
-<table cellpadding="5" cellspacing="0" border="0" class="admin">
-	<tr>
-		<th>Event</th>
-		<th>Status</th>
-		<th>Committee</th>
-		<th>Date</th>
-		<th>Member Cost</th>
-		<th>Young Alumn Cost</th>
-		<th>Guest Cost</th>
-	</tr>
-	<% @events.each do |event| %>
-		<tr class="row">
-			<td><%= link_to event.name, event %></td>
-			<td><%= event.event_state.name %></td>
-			<td><%= event.committee.name %></td>
-			<td align="left"><%= event.start_date.strftime("%a, %b %e, %Y") %></td>
-			<td align="center"><%= event.cost_member %></td>
-			<td align="center"><%= event.cost_young_alumn %></td>
-			<td align="center"><%= event.cost_guest %></td>
-		</tr>
-	<% end %>
-	<tr>
-		<td colspan="7">
-			<%= link_to "See All Events", events_path %>
-		</td>
-	</tr>
+<table class="table table-hover table-condensed">
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Status</th>
+      <th>Committee</th>
+      <th>Date</th>
+      <th>Member Cost</th>
+      <th>Young Alumn Cost</th>
+      <th>Guest Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= link_to event.name, event %></td>
+        <td><%= event.event_state.name %></td>
+        <td><%= event.committee.name %></td>
+        <td align="left"><%= event.start_date.strftime("%a, %b %e, %Y") %></td>
+        <td align="center"><%= event.cost_member %></td>
+        <td align="center"><%= event.cost_young_alumn %></td>
+        <td align="center"><%= event.cost_guest %></td>
+      </tr>
+    <% end %>
+    <tr>
+      <td colspan="7">
+        <%= link_to "See All Events", events_path %>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 <br>
@@ -36,28 +40,32 @@
 
 <h3>Active SCSF Board Members</h3>
 <% if can? :create, @user %>
-	<%= link_to "Add New User", adduser_path %>
-<% end %>		
-<table cellpadding="5" cellspacing="0" border="0" class="admin">
-	<tr>
-		<th>Name</th>
-		<th>Email Address</th>
-		<th>Postition</th>
-		<th>Committee</th>
-	</tr>
-	<% @users.each do |user| %>
-		<tr class="row">
-			<td><%= link_to "#{user.first_name} #{user.last_name}", user_path(user) %></td>
-			<td><%= user.email %></td>
-			<td><%= user.position %></td>
-			<td></td>
-		</tr>
-	<% end %>
-	<tr>
-		<td colspan="4">
-			<%= link_to "See All Users", users_path %>
-		</td>
-	</tr>
+  <%= link_to "Add New User", adduser_path %>
+<% end %>   
+<table class="table table-hover table-condensed">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email Address</th>
+      <th>Postition</th>
+      <th>Committee</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to "#{user.first_name} #{user.last_name}", user_path(user) %></td>
+        <td><%= user.email %></td>
+        <td><%= user.position %></td>
+        <td></td>
+      </tr>
+    <% end %>
+    <tr>
+      <td colspan="4">
+        <%= link_to "See All Users", users_path %>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 <br>

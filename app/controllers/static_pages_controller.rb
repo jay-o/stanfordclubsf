@@ -6,7 +6,7 @@ class StaticPagesController < ApplicationController
 
   def admin
     	@users = User.all
-    	@events = Event.where("start_date >= ?", Time.now.to_date ).order("start_date")
+    	@events = Event.where("start_date >= ?", Time.now.to_date ).order("event_state_id, start_date ")
     	@committees = Committee.all
     	authorize! :admin, :staticpage 
   end

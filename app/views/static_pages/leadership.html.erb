@@ -1,43 +1,52 @@
 <h1>Leadership</h1>
-<h3>Committee Chairs</h3>
-<ul>
-  <% @leadership_team["committees"].each do |committee, detail| %>
-    <li>
-      <%= detail["name"] %>
-      <ul>
-        <% detail["chairs"].each do |name| %>
-          <li><%= name %></li>
-        <% end %>
-      </ul>
-    </li>
-  <% end %>
-</ul>
 
-<h3>Directors</h3>
-<ul>
-  <% @leadership_team["directors"].each do |committee, detail| %>
-    <li>
-      <%= detail["name"] %>
-      <ul>
-        <% detail["chairs"].each do |name| %>
-          <li><%= name %></li>
-        <% end %>
-      </ul>
-    </li>
-  <% end %>
-</ul>
-
-<h3>Executive</h3>
-<ul>
-  <% @leadership_team["executive"].each do |committee, detail| %>
-    <li>
-      <%= detail["name"] %>
-      <ul>
-        <% detail["chairs"].each do |name| %>
-          <li><%= name %></li>
-        <% end %>
-      </ul>
-    </li>
-  <% end %>
-</ul>
+<div class="row">
+  <div class="span4">
+    <h3>Committee Chairs</h3>
+    <ul>
+      <% @leadership_team["committees"].each do |committee, detail| %>
+        <li>
+          <%= detail["name"] %>
+          <ul>
+            <% detail["chairs"].each do |name| %>
+              <li><%= name %></li>
+            <% end %>
+          </ul>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  
+  <div class="span4">
+    <h3>Directors</h3>
+    <ul>
+      <% @leadership_team["directors"].each do |committee, detail| %>
+        <li>
+          <%= detail["name"] %>
+          <ul>
+            <% detail["chairs"].each do |name| %>
+              <li><%= name %></li>
+            <% end %>
+          </ul>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  
+  <div class="span4">
+    <h3>Executive</h3>
+    <ul>
+      <% @leadership_team["executive"].each do |committee, detail| %>
+        <li>
+          <%= detail["name"] %>
+          <ul>
+            <% detail["chairs"].each do |name| %>
+              <li><%= name %></li>
+            <% end %>
+          </ul>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
 
