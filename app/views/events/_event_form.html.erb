@@ -1,8 +1,9 @@
 <%= simple_form_for @event, :html => {:class => 'form-horizontal' } do |f| %>
   <fieldset>
     <legend><%= controller.action_name.capitalize %> Event: <%= @event.name %></legend>
+    <%= f.error_notification %>
     <%= f.input :name, label: "Event Name" %>
-    <%= f.input :start_date, :as => :datepicker %>
+    <%= f.input :start_date, :as => :datepicker, hint: 'date' %>
     <%= f.input :end_date,  :as => :datepicker %>
     <%= f.input :start_time %>
     <%= f.input :end_time %>
