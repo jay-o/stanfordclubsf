@@ -144,7 +144,7 @@
   <!-- /optional -->
 
 
-  <% if current_user.admin? %>
+  <% if current_user.admin? && controller.action_name == "edit" %>
   <!-- Admin Details -->
   <div class="row">
     <div class="span4"><h4>Admin Only</h4></div>
