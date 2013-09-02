@@ -17,7 +17,7 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td><%= link_to event.name, event %></td>
+        <td><%= link_to event.name, edit_event_path(event) %></td>
         <td><%= event.event_state.name %></td>
         <td><%= event.committee.name %></td>
         <td align="left"><%= event.start_date.strftime("%a, %b %e, %Y") %></td>

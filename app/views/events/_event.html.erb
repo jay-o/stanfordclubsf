@@ -1,17 +1,62 @@
-<span class="date-icon">
-  <%= event.start_date.strftime("%b") unless event.start_date == nil %>
-  <%= event.start_date.strftime("%d") unless event.start_date == nil %>
-</span>
 <h2><%= link_to event.name, event %></h2>
-<strong>
-  <%= event.start_date.strftime("%A, %B %d") unless event.start_date == nil %>,
-  <%= event.start_time %> 
-  <% unless event.end_time.blank? %>  
-    &ndash; <%= event.end_time %>  
-  <% end %>   
-</strong> 
-<br />
-<strong>Hosting Committee</strong>: <%= event.committee.name %>
-<br />
-<br />
-<strong>Details:</strong> <%= event.description %>
+<div class="snapshot">
+  <div class="date-icon">
+    <%= event.start_date.strftime("%b") unless event.start_date == nil %> <br />
+    <%= event.start_date.strftime("%d") unless event.start_date == nil %>
+  </div>
+  <div class="details">
+    <strong>
+      <%= event.start_date.strftime("%A, %B %d") unless event.start_date == nil %>,
+      <%= event.start_time.upcase %> 
+      <% unless event.end_time.blank? %>  
+        &ndash; <%= event.end_time %>  
+      <% end %>
+    </strong>
+    <br>
+    <strong>Hosting Committee:</strong> <%= event.committee.name %> <br>
+    <table>
+      <tr>
+        <td><strong>Cost:</strong></td>
+        <td class="member-type">SCSF Member</td>
+        <td class="cost">
+          <% if event.cost_member.upcase == "FREE" %>
+            <%= event.cost_member.titleize %>
+          <% else %>
+            <%= "$#{event.cost_member}" %>
+          <% end %>
+        </td>
+      </tr>
+      <% unless event.cost_young_alumn.empty? %>
+        <tr>
+          <td></td>
+          <td class="member-type">Young Alumn</td>
+          <td class="cost">
+            <% if event.cost_young_alumn.upcase == "FREE" %>
+              <%= event.cost_young_alumn.titleize %>
+            <% else %>
+              <%= "$#{event.cost_young_alumn}" %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+      <% unless event.cost_guest.empty? %>
+        <tr>
+          <td></td>
+          <td class="member-type">Guest</td>
+          <td class="cost">
+            <% if event.cost_guest.upcase == "FREE" %>
+              <%= event.cost_guest.titleize %>
+            <% else %>
+              <%= "$#{event.cost_guest}" %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+<div class="description">
+  <strong>Details:</strong> 
+  <%= simple_format(truncate(event.description, length: 500, separator: '.', omission: '.')) %>
+  <%= link_to "Learn more", event %>
+</div>

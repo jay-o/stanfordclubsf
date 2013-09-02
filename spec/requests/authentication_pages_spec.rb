@@ -89,7 +89,7 @@ describe "Authentication" do
     end
     
     it { should have_selector('p',    text: "Admin: true") }
-    it { should have_selector('div.well', text: 'Admin View:') }
+    it { should have_selector('div.bar', text: 'Logged in as Board Member') }
 
     describe "viewing admin page" do
       before { visit '/admin' }
@@ -122,7 +122,7 @@ describe "Authentication" do
     end
     
     it { should have_selector('p',    text: "Admin: false") }
-    it { should have_selector('div.well', text: 'Admin View:') }
+    it { should have_selector('div.bar', text: 'Logged in as Board Member') }
 
     # user shoudn't be able to access create user page
     describe "viewing add user page" do

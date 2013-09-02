@@ -3,9 +3,9 @@
   <h3>No Upcoming Events at this time</h3>
   <p>Have an idea for an event? Email us!</p>
 <% else %>
-<div class="event-feed">
   <% @upcoming_events.each do |event| %>
-  <div class="event"><%= render event %></div>
+      <div class="row">
+        <div class="span8 event"><%= render event %></div>
+      </div>
   <% end %>
-</div>
 <% end %>

@@ -1,15 +1,11 @@
-<%= link_to "Upcoming Events", root_path %> |
-<%= link_to "SCSF Committees", committees_path %> |
-<%= link_to "About SCSF", about_path %> |	
-<%= link_to "Stanford Alumni Association", "#" %> |	
-<% if signed_in? && current_user.admin? %>	
-	<%= link_to "Admin Tools", admin_path %>
-<% else %>	
-	<%= link_to "Admin Login", signin_path %>
-<% end %>
-
-<%= debug(params) %>
-
-<% if signed_in? && Rails.env.development? %>  
-  Current User: <%= current_user.id %> &ndash; Admin: <%= current_user.admin? %>
-<% end %>
+<div class="footer">
+  <%= link_to "Upcoming Events", root_path %> |
+  <%= link_to "SCSF Committees", committees_path %> |
+  <%= link_to "About SCSF", about_path %> |  
+  <%= link_to "Stanford Alumni Association", "#" %> |  
+  <% if signed_in? && current_user.admin? %>  
+    <%= link_to "Admin Tools", admin_path %>
+  <% else %>  
+    <%= link_to "Admin Login", signin_path %>
+  <% end %>
+</div>
