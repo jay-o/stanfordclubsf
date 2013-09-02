@@ -31,8 +31,10 @@ FactoryGirl.define do
   end
 
   factory :event do
-    name  "Test Event"
-    committee_id "1"
+    name          "Test Event"
+    committee_id  "1"
+    start_date    "2013-01-01"
+    start_time    "9am"
   end
 
   factory :committee do

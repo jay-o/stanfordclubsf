@@ -40,12 +40,21 @@ describe Event do
   subject { @event }
 
   it { should respond_to(:name) }
+  it { should respond_to(:committee_id) }
+  it { should respond_to(:event_state_id) }
+  it { should respond_to(:start_date) }
+  it { should respond_to(:start_time) }
   it { should respond_to(:slug) }
   it { should be_valid }
 
   # Creating Event
   describe "is created" do
+    before { @event.save }
   	its(:name) { should == @event.name }
+    
+    describe "should be draft by default" do
+      its(:event_state_id) { should == 2 }
+    end
 	end
 	
   # Validations

@@ -1,37 +1,171 @@
-<%= simple_form_for @event, :html => {:class => 'form-horizontal' } do |f| %>
-  <fieldset>
-    <legend><%= controller.action_name.capitalize %> Event: <%= @event.name %></legend>
-    <%= f.error_notification %>
-    <%= f.input :name, label: "Event Name" %>
-    <%= f.input :start_date, :as => :datepicker, hint: 'date' %>
-    <%= f.input :end_date,  :as => :datepicker %>
-    <%= f.input :start_time %>
-    <%= f.input :end_time %>
-    <%= f.association :committee %>
-    <%= f.input :cost_member %>
-    <%= f.input :cost_young_alumn %>
-    <%= f.input :cost_guest %>
-    <%= f.input :address %>
-    <%= f.input :registration_url %>
-    <%= f.input :description %>
-    <%= f.input :capacity %>
-    <%= f.input :organizer %>
-    <%= f.input :organizer_email %>
-    <%= f.input :featured %>
-    <%= f.input :sold_out %>
-    <% if controller.action_name == 'new' %>
-      <%= f.input :created_by, input_html: { value: "#{current_user.id}" } %>
-    <% elsif controller.action_name == 'edit' %>
-      <%= f.input :last_updated_by,:as => :hidden, input_html: { value: "#{current_user.id}" } %> 
-      <% if current_user.admin? %>
-        <%= f.input :slug %>
-      <% end %>
-    <% end %>
-    <%= f.association :event_state %>    
-    
-    <div class="form-actions">
-      <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to 'Cancel', @event, :class => 'btn' %>
+<%= minimal_form_for @event, :html => {:class => 'event-form' } do |f| %>
+<fieldset>
+  <legend><%= controller.action_name.capitalize %> Event: <%= @event.name %></legend>
+  <%= f.error_notification %>
+  <!-- Basic Information -->
+  <div class="row">
+    <div class="span4"><h4>Information Required Before Saving</h4></div>
+  </div>
+  <div class="row">
+    <div class="span6">
+      <span class="form-label">Event Name</span>
+      <i class="icon-info-sign"></i><br />
+      <%= f.input :name, placeholder: "Event name"%>
     </div>
-  </fieldset>
+    <div class="span6">
+      <span class="form-label">Event Status</span>
+      <i class="icon-off"></i><br />
+      <%= f.association :event_state %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span6">
+      <div class="datetime">
+        <div class="date"><span class="form-label">Event Date</span></div>
+        <div class="fields">
+          <div class="icons">
+            <i class="icon-calendar"></i>
+          </div>
+          <div class="fields">
+            <%= f.input :start_date, as: :datepicker, placeholder: "Event Date" %>
+          </div>
+        </div>
+      </div>
+      <div class="datetime start">
+        <div class="start"><span class="form-label">Start Time</span></div>
+        <div class="fields">
+          <div class="icons">
+            <i class="icon-time"></i></span> 
+          </div>
+          <div class="fields">
+            <%= f.input :start_time, as: :string, placeholder: "Starts" %>
+          </div>
+        </div>
+      </div>
+      <div class="datetime end">
+        <div class="end"><span class="form-label">End Time</span></div>
+        <div class="fields">
+          <div class="icons">
+            <i class="icon-time"></i></span> 
+          </div>
+          <div class="fields">
+            <%= f.input :end_time, placeholder: "Ends" %>
+          </div>
+        </div>
+      </div>  
+    </div>
+    <div class="span6">
+      <span class="form-label">Committee</span>
+      <i class="icon-th"></i> <br />
+      <%= f.association :committee %>
+    </div>
+  </div>
+  <!-- /basic info -->
+
+  <!-- Required to Publish -->
+  <div class="row section">
+    <div class="span4"><h4>Information Requied Before Publishing</h4></div>
+  </div>
+  <div class="row">
+    <div class="span6">
+      <div class="row">
+        <div class="span6">
+          <span class="form-label">Cost</span>
+          <i class="icon-tags"></i>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span2">
+          <%= f.input :cost_member, placeholder: "Member*" %>
+        </div>
+        <div class="span2">
+          <%= f.input :cost_young_alumn, placeholder: "Young Alumn" %>
+        </div>
+        <div class="span2">
+          <%= f.input :cost_guest, placeholder: "Guest" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span5 tip">
+          <strong>Example:</strong> Members $40, Young Alumn Free, Guests $60. <br />
+          *Member price is mandatory
+        </div>
+      </div>
+    </div>
+    <div class="span6">
+      <div class="row">
+        <div class="span5">
+          <span class="form-label">Location and/or Address</span>
+          <i class="icon-map-marker"></i>
+          <%= f.input :address, placeholder: "SFMOMA or 123 Main St, San Francisco, CA 94108", class: "address", as: :string  %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span5">
+          <span class="form-label">SAA Registration URL</span>
+          <i class="icon-home"></i><br />
+          <%= f.input :registration_url, placeholder: "http://saa.stanford.edu", class: "url", as: :string %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span11">
+      <span class="form-label">Event Description</span> <i class="icon-pencil"></i>
+      <%= f.input :description, placeholder: "Event description here..."%>
+    </div>
+  </div>
+  <!-- /publish -->
+
+  <!-- Optional Details -->
+  <div class="row">
+    <div class="span4">
+      <h4>Optional</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span2">
+      <span class="form-label">Capacity</span>
+      <%= f.input :capacity, as: :integer %>
+    </div>
+    <% if controller.action_name == 'edit' %>
+    <div class="span2">
+      <span class="form-label">Featured?</span> 
+      <i class="icon-flag"></i>
+      <%= f.input :featured, as: :radio_buttons %>
+    </div>
+    <div class="span2">
+      <span class="form-label">Sold Out?</span> 
+      <i class="icon-warning-sign"></i>
+      <%= f.input :sold_out, as: :radio_buttons %>      
+    </div>
+    <% end %>
+  </div>
+  <!-- /optional -->
+
+
+  <% if current_user.admin? %>
+  <!-- Admin Details -->
+  <div class="row">
+    <div class="span4"><h4>Admin Only</h4></div>
+  </div>
+  <div class="row">
+    <div class="span6">
+      URL Slug
+      <%= f.input :slug %>
+    </div>
+  </div>
+  <!-- /admin details -->
+  <% end %>
+
+
+  <div class="form-actions">
+    <% if controller.action_name == "new" %>
+      <%= f.input :created_by,:as => :hidden, input_html: { value: "#{current_user.id}" } %> 
+    <% end %>
+    <%= f.input :last_updated_by,:as => :hidden, input_html: { value: "#{current_user.id}" } %> 
+    <%= f.submit "Save Event", :class => 'btn btn-primary' %>
+    <%= link_to 'Cancel', @event, :class => 'btn' %>
+  </div>
+</fieldset>
 <% end %>

@@ -43,3 +43,69 @@ table.event-cost {
     text-align: center;
   }
 }
+
+.event-form {
+  .section {
+    margin-top: 60px;
+  }
+  select {
+    margin-bottom: 0;
+  }
+  .form-label {
+    font-weight: bold;
+  }
+  .datetime {
+    display: inline-block;
+    &.start, &.end {
+      padding-left: 10px;
+    }
+    .start, .end {
+      text-align: right;
+    }
+    .icons, .fields {
+      float: left;
+    }
+    .icons {
+      margin-top: 9px;
+      margin-right: 6px;
+    }
+  }
+  .cost {
+    margin-left: 0;
+  }
+  .tip {
+    font-size: 12px;
+    line-height: 12px;
+    font-style: italic;
+  }
+  input, a {
+    margin-bottom: 10px;
+    margin-top: 5px;
+    &#event_name,
+    &.datepicker,
+    &#event_address,
+    &#event_registration_url,
+    &#event_capacity,
+    &#event_slug {
+      width: 80%;
+    }
+    &#event_start_time, 
+    &#event_end_time {
+      width: 60px;
+    }
+    &#event_cost_member,
+    &#event_cost_young_alumn,
+    &#event_cost_guest  {
+      width: 60%;
+    }
+  }
+  textarea {    
+    padding: 10px;
+    width: 91%; 
+    height: 300px;
+  }
+  select {
+    margin-top: 4px;
+    width: 69%;
+  }
+}

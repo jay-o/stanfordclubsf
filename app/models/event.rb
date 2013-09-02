@@ -65,12 +65,13 @@ class Event < ActiveRecord::Base
   validates	:slug, presence: true, uniqueness: true
 
   # Draft Validations
-  validates :name, :committee_id, presence: true
+  validates :name, :committee_id, :start_date, :start_time, :event_state_id, presence: true
+
 
   # Publish Validations
   validates :name, presence: true, :if => :published?
   validates :description, presence: true, length: { minimum: 25 }, :if => :published?
-  validates :start_date, :start_time, :address, :cost_member, presence: true, :if => :published?
+  validates :address, :cost_member, presence: true, :if => :published?
 
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?

@@ -3,7 +3,7 @@
   <div class="span8">
     <h1><%= @event.name.titleize %></h1>
     <br>
-    <% if @event.committee_id != nil %>
+    <% if @event.committee_id %>
       <strong>Hosting Committee:</strong> <%= link_to @event.committee.name, committee_path(@event.committee) %> 
     <% end %>    
     <br>

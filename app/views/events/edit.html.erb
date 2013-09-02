@@ -1,5 +1,2 @@
-<% provide(:title, @event.name ) %>
-<div class="row">
-  <div class="span6 offset3"><%= render 'event_form' %></div>
-  <div class="span3"></div>
-</div>
+<% provide(:title, "Edit #{@event.name}" ) %>
+<%= render 'event_form' %>
