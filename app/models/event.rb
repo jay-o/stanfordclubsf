@@ -70,7 +70,7 @@ class Event < ActiveRecord::Base
   # Publish Validations
   validates :name, presence: true, :if => :published?
   validates :description, presence: true, length: { minimum: 25 }, :if => :published?
-  validates :start_date, :start_time, :address, :cost_member, :cost_guest, presence: true, :if => :published?
+  validates :start_date, :start_time, :address, :cost_member, presence: true, :if => :published?
 
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
