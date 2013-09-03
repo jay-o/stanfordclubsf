@@ -42,13 +42,30 @@ body {
 // Stanford Colors
 @cardinal:      #8C1515;
 @cardinal-text: #820000;
-@gray-bg-1:     #FBFBF9;
-@gray-bg-2:     #f2f1eb;
+@gray-bg-lighter:     #FBFBF9;
+@gray-bg-darker:     #f2f1eb;
 @beige-text:    #9d9573;
 @beige-border:  #c4bfa9;
 body {
+  font-size: 16px;
+  line-height: 20px;
   font-family: 'Source Sans Pro', helvetica, arial, sans-serif;
-  background-color: @gray-bg-1;
+  background-color: @gray-bg-lighter;
+}
+
+
+// Headings
+h1 {
+  font-size: 36px;
+}
+h2 {
+  font-size: 28px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 20px;
 }
 
 
@@ -87,7 +104,7 @@ body {
   padding: 30px 0 20px 0;
   color: @beige-text;
   border-top: 1px solid #e5e5e5;
-  background-color: @gray-bg-2;
+  background-color: @gray-bg-darker;
   .span2 {
     margin-bottom: 30px;
   }
@@ -114,14 +131,22 @@ body {
 }
 
 .widget {
-  background-color: @gray-bg-2;
-  padding: 10px 20px;
-  border-bottom: 3px solid @beige-border;
+  background-color: @gray-bg-darker;
+  border-bottom: 4px solid @beige-border;
   margin-bottom: 20px;
+  .top-bar {
+    padding: 10px 20px;
+    background-color: #e6e4db;
+    border-bottom: 1px solid darken(#e6e4db, 10%)
+  }
+  .content {
+    padding: 10px 20px;
+  }
+  .center-button {
+    margin: 10px auto;
+    text-align: center;
+  }
 }
-
-
-
 
 
 
@@ -161,30 +186,40 @@ body {
     clear: both;
     padding-left: 60px;
   }
-}
 
+}
 
 
 /* -----------------------------------------------
 -- Event Show
 -------------------------------------------------- */
+// Details 
+.event-show-details {
+  .first-column {
+    text-align: right;
+    font-weight: bold;
+  }
+  .center-button {
+    a {
+      padding: 6px 25px;
+      font-size: 22px; 
+    }
+    i {
+      padding-right: 5px;
+      font-size: 20px;
+    } 
+  }
+}
+
+// Margin under Map
 .bottom {
   margin-bottom: 30px;
 }
-table.event-cost {
-  .label {
-    padding: 0;
-    font-weight: bold;
-  }
-  .member-type{
-    padding: 2px 10px;
-    text-align: left;
-  }
-  .cost {
-    padding: 2px 10px;
-    text-align: center;
-  }
-}
+
+
+/* -----------------------------------------------
+-- Event Form
+-------------------------------------------------- */
 
 .event-form {
   .section {
@@ -253,15 +288,23 @@ table.event-cost {
 }
 
 
+
 /* -----------------------------------------------
 --  Admin View
 -------------------------------------------------- */
 // Admin alert bar
+.admin-alert {
+  border: 1px solid #999;
+  .pipe {
+    color: black;
+    margin: 5px;
+  }
+}
 .progress, .bar {
   height: 60px;
 }
 .progress .bar {
-  background-color: #A51818;
+  background-color: gray;
   font-size: 20px;
   line-height: 30px;
   height: 30px;

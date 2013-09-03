@@ -1,65 +1,90 @@
 <% provide(:title, @event.name ) %>
 <div class="row">
   <div class="span6">
-    <h1><%= @event.name.titleize %></h1>    
+    <h1><%= @event.name.titleize %></h1>
+    <%= render 'admin_details' %>
   </div>
 </div>
-<div class="row">
+<div class="row event-show-details">
   <div class="span7">
-    <br>
-    <% if @event.committee_id %>
-      <strong>Hosting Committee:</strong> <%= link_to @event.committee.name, committee_path(@event.committee) %> 
-    <% end %>
-    <br>
-    <strong>Details:</strong> <%= simple_format(@event.description) %>
+    <div class="event-body">
+      <%= simple_format(@event.description) %>  
+    </div>
   </div>
   <div class="span4 offset1">
-    <%= render 'admin_details' %>
     <div class="widget">
-      <%= @event.start_date.strftime("%A, %B %d, %Y") %> <br />
-      <%= @event.start_time.upcase %> <%= "- #{@event.end_time.upcase}" unless @event.end_time == nil %>
-      <br>
-      <table cellpadding="0" cellspacing="0" border="0" class="event-cost">
-        <tr>
-          <td>Cost:</td>
-          <td class="member-type">SCSF Member</td>
-          <td class="cost">
-            <% if @event.cost_member.upcase == "FREE" %>
-              <%= @event.cost_member.titleize %>
-            <% else %>
-              <%= "$#{@event.cost_member}" %>
+      <div class="top-bar">
+        <h4>Event Details</h4>
+      </div>
+      <div class="content">
+        <table width="100%" cellpadding="5" cellspacing="0" border="0">
+          <tbody>
+            <tr>
+              <td width="95" class="first-column">Date:</td>
+              <td><%= @event.start_date.strftime("%A, %B %d, %Y") %></td>
+            </tr>
+            <tr>
+              <td class="first-column">Time:</td>
+              <td><%= @event.start_time.upcase %><%= " - #{@event.end_time.upcase}" unless @event.end_time == nil %></td>
+            </tr>
+            <tr>
+              <td class="first-column">Committee:</td>
+              <td><%= link_to @event.committee.name, committee_path(@event.committee) %></td>
+            </tr>
+            <% unless @event.capacity.nil? %>
+            <tr>
+              <td class="first-column">Capacity:</td>
+              <td><%= pluralize(@event.capacity, "person", "people") %></td>
+            </tr>
             <% end %>
-          </td>
-        </tr>
-        <% unless @event.cost_young_alumn.empty? %>
-          <tr>
-            <td></td>
-            <td class="member-type">Young Alumn</td>
-            <td class="cost">
-              <% if @event.cost_young_alumn.upcase == "FREE" %>
-                <%= @event.cost_young_alumn.titleize %>
-              <% else %>
-                <%= "$#{@event.cost_young_alumn}" %>
-              <% end %>
-            </td>
-          </tr>
-        <% end %>
-        <% unless @event.cost_guest.empty? %>
-          <tr>
-            <td></td>
-            <td class="member-type">Guest</td>
-            <td class="cost">
-              <% if @event.cost_guest.upcase == "FREE" %>
-                <%= @event.cost_guest.titleize %>
-              <% else %>
-                <%= "$#{@event.cost_guest}" %>
-              <% end %>
-            </td>
-          </tr>
-        <% end %>
-      </table>
-      <div class="centering">
-        <%= link_to "RSVP", @event.registration_url, class: 'btn' %>
+            <tr>
+              <td valign="top" class="first-column">Cost:</td>
+              <td>
+                <table width="100%" cellpadding="1" cellspacing="0" border="0">
+                  <tbody>
+                    <tr>
+                      <td width="50%">Members</td>
+                      <td width="50%">
+                        <% if @event.cost_member.upcase == "FREE" %>
+                          <%= @event.cost_member.titleize %>
+                        <% else %>
+                          <%= "$#{@event.cost_member}" %>
+                        <% end %>
+                      </td>
+                    </tr>
+                    <% unless @event.cost_young_alumn.empty? %>
+                    <tr>
+                      <td>Young Alumni</td>
+                      <td>
+                        <% if @event.cost_young_alumn.upcase == "FREE" %>
+                          <%= @event.cost_young_alumn.titleize %>
+                        <% else %>
+                          <%= "$#{@event.cost_young_alumn}" %>
+                        <% end %>
+                      </td>
+                    </tr>
+                    <% end %>
+                    <% unless @event.cost_guest.empty? %>
+                    <tr>
+                      <td>Guests</td>
+                      <td>
+                        <% if @event.cost_guest.upcase == "FREE" %>
+                          <%= @event.cost_guest.titleize %>
+                        <% else %>
+                          <%= "$#{@event.cost_guest}" %>
+                        <% end %>
+                      </td>
+                    </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="center-button">
+        <a href="<%= "#{@event.registration_url}" %>" class='btn btn-danger'><i class="icon-check-sign"></i> RSVP </a>
       </div>
     </div>
   </div>
@@ -73,8 +98,6 @@
     <% end %>
   </div>
   <div class="span4 offset1">
-    <div class="widget">
-      <%= render 'shared/join_scsf' %>
-    </div>
+    <%= render 'shared/join_scsf' %>
   </div>
 </div>

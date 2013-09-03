@@ -1,12 +1,10 @@
 <% if signed_in? %>
-	<div class="center">
-    <div class="progress progress-striped active">
-      <div class="bar" style="width: 100%;">Logged in as Board Member: <%= current_user.email %>
-        <br>
-        <%= link_to "Admin Tools", admin_path %>
-        <span style="color: #A51818; font-weight: bold;">|</span> 
-        <%= link_to "Sign out", signout_path, method: "delete" %>
-      </div>
-    </div>		
-	</div>  
+  <div class="admin-alert progress progress-striped active">
+    <div class="bar" style="width: 100%;">Logged in as Board Member: <%= current_user.email %>
+      <br>
+      <%= link_to "Admin Tools", admin_path %>
+      <span class="pipe"> | </span> 
+      <%= link_to "Sign out", signout_path, method: "delete" %>
+    </div>
+  </div>		
 <% end %>
