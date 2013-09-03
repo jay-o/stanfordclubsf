@@ -2,6 +2,7 @@ class StaticPagesController < ApplicationController
   def home
     # @upcoming_events = Event.where("start_date >= ?", Time.now.to_date ).where("event_state_id = 1").order("start_date")
     @upcoming_events = Event.where("start_date >= ?", Time.now.to_date ).where("event_state_id = 1").order("start_date")
+    @committees = Committee.all
   end
 
   def admin

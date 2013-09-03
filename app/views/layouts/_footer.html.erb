@@ -1,11 +1,48 @@
 <div class="footer">
-  <%= link_to "Upcoming Events", root_path %> |
-  <%= link_to "SCSF Committees", committees_path %> |
-  <%= link_to "About SCSF", about_path %> |  
-  <%= link_to "Stanford Alumni Association", "#" %> |  
-  <% if signed_in? && current_user.admin? %>  
-    <%= link_to "Admin Tools", admin_path %>
-  <% else %>  
-    <%= link_to "Admin Login", signin_path %>
-  <% end %>
+  <div class="container">
+    <div class="row">
+      <div class="span2">
+        Stanford Club of <br> San Francisco
+      </div>
+      <div class="span2 border">
+        <ul class="menu">
+          <a href="">ABOUT SCSF</a>
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "About", committees_path %></li>
+          <li><%= link_to "Contact", about_path %></li>
+        </ul> 
+      </div>
+      <div class="span2 border">
+        <ul class="menu">
+          <a href="">CONNECT WITH SCSF</a>
+          <li><%= link_to "SCSF on Facebook", "https://www.facebook.com/groups/stanfordclubsf/", target: "_blank" %></li>
+          <li><%= link_to "SCSF on Twitter", "http://www.twitter.com/stanfordclubsf/", target: "_blank" %></li>
+          <li><%= link_to "Join the Club", "https://alumni.stanford.edu/get/page/groups/overview/?group_id=0038990293", target: "_blank" %></li>
+        </ul> 
+      </div>
+      <div class="span2 border">
+        <ul class="menu">
+          <a href="">OTHER RESOURCES</a>
+          <li><%= link_to "Stanford Alumni Association", "http://alumni.stanford.edu", target: "_blank" %></li>
+          <li><%= link_to "Stanford.edu", "http://www.stanford.edu", target: "_blank" %></li>
+          <li><%= link_to "Cardinal Young Alumni", "https://www.facebook.com/groups/cya.bay/", target: "_blank" %></li>
+        </ul> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="span12">
+        <center>
+          &copy; <%= Time.now.strftime("%Y") %> Stanford Club of San Francisco |
+          <% if signed_in? %>  
+            <%= link_to "Admin Tools", admin_path %>
+          <% else %>  
+            <%= link_to "Admin Login", signin_path %>
+          <% end %>
+          <br>
+          Have an idea to improve the site? 
+          <%= link_to "Fork me on Github", "http://www.github.com/jay-o/stanfordclubsf", target: '_blank' %> <i class="icon-github"></i>
+        </center>
+      </div>
+    </div>
+  </div>
 </div>

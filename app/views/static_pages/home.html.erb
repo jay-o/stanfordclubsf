@@ -1,13 +1,18 @@
-<h4>Upcoming Events</h4>
-<% if @upcoming_events.empty? %>  
-  <h3>No Upcoming Events at this time</h3>
-  <p>Have an idea for an event? Email us!</p>
-<% else %>
-  <% @upcoming_events.each do |event| %>
-      <div class="row">
-        <div class="span8 event">
-          <%= render event %>
-        </div>
-      </div>
-  <% end %>
-<% end %>
+<div class="row">
+  <div class="span7">
+    <%= render 'events/events_feed' %>
+  </div>
+  <div class="span4 offset1 sidebar">
+    <div class="widget">
+      <h4>Committees</h4>
+      <ul>
+      <% @committees.each do |committee| %>
+        <li><%= link_to committee.name, committee %></li>
+      <% end %>
+      </ul>
+    </div>
+    <div class="widget">
+      <%= render 'shared/join_scsf' %>
+    </div>
+  </div>
+</div>

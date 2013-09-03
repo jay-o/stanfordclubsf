@@ -1,21 +1,21 @@
 <% provide(:title, @event.name ) %>
 <div class="row">
+  <div class="span6">
+    <h1><%= @event.name.titleize %></h1>    
+  </div>
+</div>
+<div class="row">
   <div class="span7">
-    <h1><%= @event.name.titleize %></h1>
     <br>
     <% if @event.committee_id %>
       <strong>Hosting Committee:</strong> <%= link_to @event.committee.name, committee_path(@event.committee) %> 
-    <% end %>    
+    <% end %>
     <br>
     <strong>Details:</strong> <%= simple_format(@event.description) %>
-    <h3>Location</h3>
-    <%= @event.address.to_s.titleize %> <br>
-    <% if @event.longitude.present? && @event.latitude.present?  %>
-      <%= link_to image_tag("http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=13&markers=#{@event.latitude}%2C#{@event.longitude}"), "http://maps.google.com/maps?q=#{@event.address}", :target => "blank" %>
-    <% end %>
   </div>
   <div class="span4 offset1">
-    <div class="well">
+    <%= render 'admin_details' %>
+    <div class="widget">
       <%= @event.start_date.strftime("%A, %B %d, %Y") %> <br />
       <%= @event.start_time.upcase %> <%= "- #{@event.end_time.upcase}" unless @event.end_time == nil %>
       <br>
@@ -62,9 +62,19 @@
         <%= link_to "RSVP", @event.registration_url, class: 'btn' %>
       </div>
     </div>
-    <div class="well">
+  </div>
+</div>
+<div class="row">
+  <div class="span7 bottom">
+    <h3>Location</h3>
+    <%= @event.address.to_s %> <br>
+    <% if @event.longitude.present? && @event.latitude.present?  %>
+      <%= link_to image_tag("http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=13&markers=#{@event.latitude}%2C#{@event.longitude}"), "http://maps.google.com/maps?q=#{@event.address}", :target => "blank" %>
+    <% end %>
+  </div>
+  <div class="span4 offset1">
+    <div class="widget">
       <%= render 'shared/join_scsf' %>
     </div>
-    <%= render 'admin_details' %>
   </div>
 </div>

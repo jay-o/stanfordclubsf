@@ -2,7 +2,7 @@
 committees:
   arts:
     name: "Arts, Culture, Science"
-    chairs: ["Jay", "Fiona"]
+    chairs: [""]
   career:
     name:   "Career Advancement"
     chairs: ["Shawn Salmon"]

@@ -1,6 +1,6 @@
 <h2><%= link_to event.name, event %></h2>
 <div class="date-icon">
-  <%= event.start_date.strftime("%b") unless event.start_date == nil %> <br />
+  <%= event.start_date.strftime("%b") unless event.start_date == nil %><br />
   <%= event.start_date.strftime("%d") unless event.start_date == nil %>
 </div>
 <div class="details">
@@ -13,9 +13,24 @@
   </strong>
   <br>
   <strong>Hosting Committee:</strong> <%= event.committee.name %> <br>
+  <strong>Cost:</strong> 
+  <% if event.cost_member.upcase == "FREE" %>
+    Members <%= event.cost_member.titleize %>
+  <% else %>
+    Members <%= "$#{event.cost_member}" %>
+  <% end %>
+  <% if event.cost_young_alumn.upcase == "FREE" %>
+    <%= ", Young Alumni#{event.cost_young_alumn.titleize}" %>
+  <% else %>
+    <%= ", Young Alumni $#{event.cost_young_alumn}" %>
+  <% end %>
+  <% if event.cost_guest.upcase == "FREE" %>
+    <%= ", Guests #{event.cost_guest.titleize}" %>
+  <% else %>
+    <%= ", Guests $#{event.cost_guest}" %>
+  <% end %>
 </div>
 <div class="description">
-  <strong>Details:</strong> 
   <%= simple_format(truncate(event.description, length: 500, separator: '.', omission: '.')) %>
   <%= link_to "Learn more", event %>
 </div>

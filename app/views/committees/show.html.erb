@@ -1,9 +1,20 @@
 <% provide(:title, @committee.name ) %>
-<h1><%= @committee.name %></h1>
-<% if can? :update, @committee %>
-  <p><%= link_to "Edit Committee", edit_committee_path(@committee) %></p>
-<% end %>
-
-<p><%= @committee.description %></p>
-
-<%= render 'events/feed' %>
+<div class="row">
+  <div class="span6">
+    <h1><%= @committee.name %></h1>
+    <p><%= @committee.description %></p>
+  </div>
+</div>
+<div class="row">
+  <div class="span7">
+    <%= render 'events/events_feed' %>
+  </div>
+  <div class="span4 offset1 sidebar">
+    <% if can? :update, @committee %>
+      <p><%= link_to "Edit Committee", edit_committee_path(@committee) %></p>
+    <% end %>
+    <div class="widget">
+      <%= render 'shared/join_scsf' %>
+    </div>
+  </div>
+</div>

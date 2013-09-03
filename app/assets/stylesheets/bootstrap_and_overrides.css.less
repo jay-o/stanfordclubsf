@@ -34,51 +34,229 @@ body {
 
 
 
+/* -----------------------------------------------
+-- Fonts/Colors
+-------------------------------------------------- */
+@import url('http://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text:400,600,700');
+// Stanford Colors
+@cardinal:      #8C1515;
+@cardinal-text: #820000;
+@gray-bg-1:     #FBFBF9;
+@gray-bg-2:     #f2f1eb;
+@beige-text:    #9d9573;
+@beige-border:  #c4bfa9;
+body {
+  font-family: 'Source Sans Pro', helvetica, arial, sans-serif;
+  background-color: @gray-bg-1;
+}
 
-/* Main Nav
+
+/* -----------------------------------------------
+-- Main Nav
 -------------------------------------------------- */
 .navbar-inner {
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#a61919), to(#8C1515));
   color: #fff;
 }
-.navbar .nav > li > a,
+.navbar .nav > li > a {
+  color: #ffffff;
+  text-shadow: none; 
+}
+
 .navbar .brand {
- color: #fff;
- font-family: helvetica;
- text-shadow: none; 
+  color: #ffffff;
+  text-shadow: none; 
+  font-family: 'Crimson Text', serif;
+  font-size: 22px;
 }
-.center {
-  text-align: center;
-}
+ 
 
 
-
-/* Footer
+/* -----------------------------------------------
+-- Layouts
 -------------------------------------------------- */
+// Sidebar
+.sidebar {
+  padding-top: 40px;
+}
+
+// Footer
 .footer {
-  clear: both;
-  text-align: center;
-  padding: 30px 0;
   margin-top: 70px;
+  padding: 30px 0 20px 0;
+  color: @beige-text;
   border-top: 1px solid #e5e5e5;
-  background-color: #f5f5f5;
+  background-color: @gray-bg-2;
+  .span2 {
+    margin-bottom: 30px;
+  }
+  .border {
+    border-top: 1px solid @beige-border;
+  }
+  a {
+    color: @beige-text;
+  }
+  ul {
+    margin: 0;
+    list-style-type: none;
+    a {
+      line-height: 25px;
+    }
+    li {
+      padding: 2px 0;
+      a {
+        font-size: 14px;
+        line-height: 14px;
+      }
+    }
+  }
 }
-.footer p {
-  margin-bottom: 0;
-  color: #777;
-}
-.footer-links {
-  margin: 10px 0;
-}
-.footer-links li {
-  display: inline;
-  padding: 0 2px;
+
+.widget {
+  background-color: @gray-bg-2;
+  padding: 10px 20px;
+  border-bottom: 3px solid @beige-border;
+  margin-bottom: 20px;
 }
 
 
 
-/* Admin alert
+
+
+
+
+/* -----------------------------------------------
+-- event list in event/feed
 -------------------------------------------------- */
+.event-feed-header {
+  margin-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 4px solid #8C1515;
+}
+.event {
+  margin-bottom: 40px;
+  padding: 0 15px 40px 15px;
+  // background-color: #eee;
+  border-bottom: 1px dotted #ddd;
+  h2 a {
+    margin: 10px 0 5px 0;
+    color: @cardinal-text;
+  }
+  .date-icon {
+    margin: 6px 10px 5px 0;
+    padding: 2px 8px;
+    width: 30px;
+    font-size: 16px;
+    line-height: 18px;
+    border: 2px solid black;
+    border-top: 9px solid black;
+    text-align: center;
+    float: left;
+  }
+  .details {
+  }
+  .description {
+    margin-top: 10px;
+    clear: both;
+    padding-left: 60px;
+  }
+}
+
+
+
+/* -----------------------------------------------
+-- Event Show
+-------------------------------------------------- */
+.bottom {
+  margin-bottom: 30px;
+}
+table.event-cost {
+  .label {
+    padding: 0;
+    font-weight: bold;
+  }
+  .member-type{
+    padding: 2px 10px;
+    text-align: left;
+  }
+  .cost {
+    padding: 2px 10px;
+    text-align: center;
+  }
+}
+
+.event-form {
+  .section {
+    margin-top: 60px;
+  }
+  select {
+    margin-bottom: 0;
+  }
+  .form-label {
+    font-weight: bold;
+  }
+  .datetime {
+    display: inline-block;
+    &.start, &.end {
+      padding-left: 10px;
+    }
+    .start, .end {
+      text-align: right;
+    }
+    .icons, .fields {
+      float: left;
+    }
+    .icons {
+      margin-top: 9px;
+      margin-right: 6px;
+    }
+  }
+  .cost {
+    margin-left: 0;
+  }
+  .tip {
+    font-size: 12px;
+    line-height: 12px;
+    font-style: italic;
+  }
+  input, a {
+    margin-bottom: 10px;
+    margin-top: 5px;
+    &#event_name,
+    &.datepicker,
+    &#event_address,
+    &#event_registration_url,
+    &#event_capacity,
+    &#event_slug {
+      width: 80%;
+    }
+    &#event_start_time, 
+    &#event_end_time {
+      width: 60px;
+    }
+    &#event_cost_member,
+    &#event_cost_young_alumn,
+    &#event_cost_guest  {
+      width: 60%;
+    }
+  }
+  textarea {    
+    padding: 10px;
+    width: 91%; 
+    height: 300px;
+  }
+  select {
+    margin-top: 4px;
+    width: 69%;
+  }
+}
+
+
+/* -----------------------------------------------
+--  Admin View
+-------------------------------------------------- */
+// Admin alert bar
 .progress, .bar {
   height: 60px;
 }
@@ -87,4 +265,24 @@ body {
   font-size: 20px;
   line-height: 30px;
   height: 30px;
+}
+
+// /admin home style
+table.admin {
+  border-collapse: collapse;
+  th {
+    text-align: left;
+  }
+  td {
+    padding: 7px;
+    list-style: none;
+    border-top: 1px solid black;
+  }
+  .row:nth-child(even) {
+    background-color: #f5f5f5;
+  }
+  .row:nth-child(even):hover,
+  .row:nth-child(odd):hover {
+    background-color: #fffff0;
+  }
 }
