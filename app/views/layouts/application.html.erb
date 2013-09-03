@@ -14,17 +14,24 @@
 </head>
 <body>
 <div class="container">
-  <div class="navbar">
+  <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
-      <ul class="nav">
-        <li><%= link_to "Stanford Club of San Francisco", root_path, class: "brand" %></li>
-        <li><%= link_to "Upcoming Events", root_path %></li>
-        <li><%= link_to "What We Do", about_path %></li>
-        <li><%= link_to "Leadership", leadership_path %></li>
-        <li><%= link_to "Join the Club", join_path %></li>
-      </ul>
+      <div class="container">
+        <a class="brand" href="#">Stanford Club of San Francisco</a>
+        <ul class="nav">
+          <li><%= link_to "Upcoming Events", root_path %></li>
+          <li><%= link_to "What We Do", about_path %></li>
+          <li><%= link_to "Leadership", leadership_path %></li>
+          <li><%= link_to "Join the Club", join_path %></li>
+        </ul>
+      </div>
     </div>
   </div>
+  
+  <div class="hero">
+    <%= image_tag("sf_skyline.jpg", width: 300) %>
+  </div>
+  
   <div class="row">
     <div class="span12">
       <%= render 'layouts/admin_alert' %>

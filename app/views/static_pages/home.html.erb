@@ -1,1 +1,13 @@
-<%= render 'events/feed' %>
+<h4>Upcoming Events</h4>
+<% if @upcoming_events.empty? %>  
+  <h3>No Upcoming Events at this time</h3>
+  <p>Have an idea for an event? Email us!</p>
+<% else %>
+  <% @upcoming_events.each do |event| %>
+      <div class="row">
+        <div class="span8 event">
+          <%= render event %>
+        </div>
+      </div>
+  <% end %>
+<% end %>

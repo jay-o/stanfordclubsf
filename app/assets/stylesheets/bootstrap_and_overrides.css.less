@@ -1,4 +1,7 @@
 @import "twitter/bootstrap/bootstrap";
+body {
+  padding-top: 40px;
+}
 @import "twitter/bootstrap/responsive";
 
 // Set the correct sprite paths
@@ -29,6 +32,53 @@
 // Example:
 // @linkColor: #ff0000;
 
+
+
+
+/* Main Nav
+-------------------------------------------------- */
+.navbar-inner {
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#a61919), to(#8C1515));
+  color: #fff;
+}
+.navbar .nav > li > a,
+.navbar .brand {
+ color: #fff;
+ font-family: helvetica;
+ text-shadow: none; 
+}
+.center {
+  text-align: center;
+}
+
+
+
+/* Footer
+-------------------------------------------------- */
+.footer {
+  clear: both;
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 70px;
+  border-top: 1px solid #e5e5e5;
+  background-color: #f5f5f5;
+}
+.footer p {
+  margin-bottom: 0;
+  color: #777;
+}
+.footer-links {
+  margin: 10px 0;
+}
+.footer-links li {
+  display: inline;
+  padding: 0 2px;
+}
+
+
+
+/* Admin alert
+-------------------------------------------------- */
 .progress, .bar {
   height: 60px;
 }
