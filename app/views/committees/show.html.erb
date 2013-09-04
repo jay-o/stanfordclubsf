@@ -3,6 +3,9 @@
   <div class="span6">
     <h1><%= @committee.name %></h1>
     <p><%= @committee.description %></p>
+    <% if can? :update, @committee %>
+      <p><%= link_to "Edit Committee", edit_committee_path(@committee) %></p>
+    <% end %>
   </div>
 </div>
 <div class="row">
@@ -10,11 +13,6 @@
     <%= render 'events/events_feed' %>
   </div>
   <div class="span4 offset1 sidebar">
-    <% if can? :update, @committee %>
-      <p><%= link_to "Edit Committee", edit_committee_path(@committee) %></p>
-    <% end %>
-    <div class="widget">
-      <%= render 'shared/join_scsf' %>
-    </div>
+    <%= render 'shared/join_scsf' %>
   </div>
 </div>

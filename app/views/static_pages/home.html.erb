@@ -4,12 +4,16 @@
   </div>
   <div class="span4 offset1 sidebar">
     <div class="widget">
-      <h4>Committees</h4>
-      <ul>
-      <% @committees.each do |committee| %>
-        <li><%= link_to committee.name, committee %></li>
-      <% end %>
-      </ul>
+      <div class="top-bar">
+        <h4>Event Committees</h4>
+      </div>
+      <div class="content">
+        <ul class="committee-list">
+        <% @committees.each do |committee| %>
+          <li><%= link_to committee.name, committee %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
     <%= render 'shared/join_scsf' %>
   </div>

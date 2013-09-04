@@ -12,7 +12,7 @@
     <% end %>
   </strong>
   <br>
-  <strong>Hosting Committee:</strong> <%= event.committee.name %> <br>
+  <strong>Committee:</strong> <%= event.committee.name %> <br>
   <strong>Cost:</strong> 
   <% if event.cost_member.upcase == "FREE" %>
     Members <%= event.cost_member.titleize %>
@@ -32,5 +32,6 @@
 </div>
 <div class="description">
   <%= simple_format(truncate(event.description, length: 500, separator: '.', omission: '.')) %>
-  <%= link_to "Learn more", event %>
+  <%= link_to "Learn more", event %> 
+  <i class="icon-double-angle-right"></i>
 </div>

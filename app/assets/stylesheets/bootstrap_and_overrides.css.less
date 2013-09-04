@@ -78,12 +78,16 @@ h4 {
 }
 .navbar .nav > li > a {
   color: #ffffff;
-  text-shadow: none; 
+  text-shadow: 1px 1px 1px #000;   
+  &:hover {
+    color: #ffffff;
+    text-shadow: 0 0 5px #555;
+  }
 }
 
 .navbar .brand {
   color: #ffffff;
-  text-shadow: none; 
+  text-shadow: 1px 1px 1px #000;
   font-family: 'Crimson Text', serif;
   font-size: 22px;
 }
@@ -95,7 +99,7 @@ h4 {
 -------------------------------------------------- */
 // Sidebar
 .sidebar {
-  padding-top: 40px;
+  padding-top: 80px;
 }
 
 // Footer
@@ -130,6 +134,7 @@ h4 {
   }
 }
 
+// Widget
 .widget {
   background-color: @gray-bg-darker;
   border-bottom: 4px solid @beige-border;
@@ -146,13 +151,26 @@ h4 {
     margin: 10px auto;
     text-align: center;
   }
+  ul.committee-list {
+    margin: 0;
+    list-style-type: none;
+    li {
+      line-height: 28px;
+      border-bottom: 1px solid lighten(@beige-border, 10%);
+      &:last-child {
+        border: none;
+      }
+      a {
+        color: #a61919;
+      }
+    }
+  }
 }
 
 
 
-
 /* -----------------------------------------------
--- event list in event/feed
+-- Event list in event/feed
 -------------------------------------------------- */
 .event-feed-header {
   margin-top: 20px;
@@ -220,7 +238,6 @@ h4 {
 /* -----------------------------------------------
 -- Event Form
 -------------------------------------------------- */
-
 .event-form {
   .section {
     margin-top: 60px;
@@ -327,5 +344,37 @@ table.admin {
   .row:nth-child(even):hover,
   .row:nth-child(odd):hover {
     background-color: #fffff0;
+  }
+}
+
+
+/* -----------------------------------------------
+--  Static Pages
+-------------------------------------------------- */
+.leadership {
+  .span3 {
+    margin-right: 25px;
+  }
+  .title {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  h3 {
+    border-bottom: 4px solid #8C1515;
+  }
+  ul {
+    margin: 0;
+    list-style-type: none;
+  }
+}
+
+.side-nav {
+  margin-top: 60px;
+  ul {
+    margin: 0;
+  }
+  li {
+    padding: 4px 0;
   }
 }
