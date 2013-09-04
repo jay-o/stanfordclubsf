@@ -81,7 +81,7 @@ class Event < ActiveRecord::Base
   end
 
   def generate_slug
-    self.slug ||= name.parameterize
+    self.slug ||= "#{self.name.parameterize}-#{self.start_date}"
   end
 
 private
