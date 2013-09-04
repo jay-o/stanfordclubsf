@@ -9,7 +9,7 @@ describe "User pages" do
     describe "as non admin" do
       before { visit adduser_path }
 
-      it { should have_selector('h1', text: "Admin Login") }
+      it { should have_selector('h2', text: "Admin Login") }
       it { should have_selector('div.alert.alert-error', text: 'Access denied') }
     end
 
@@ -25,7 +25,7 @@ describe "User pages" do
       end
 
       describe "going to add a new user" do
-        it { should have_selector('h1', text: "Add User Account") }
+        it { should have_selector('h2', text: "Add User Account") }
       end
 
       describe "with invalid information" do
@@ -51,7 +51,7 @@ describe "User pages" do
           before { click_button submit }
 
           it { should have_selector('h1', text: "Admin Tools") }
-          it { should have_selector('div.alert.alert-notice', text: 'User Sucessfully Created: user@example.com') }
+          it { should have_selector('div.alert.alert-success', text: 'User Sucessfully Created: user@example.com') }
         end 
       end
     end

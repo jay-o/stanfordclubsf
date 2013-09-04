@@ -18,6 +18,9 @@ Stanfordclubsf::Application.routes.draw do
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
 
+  # Password reset
+  resources :password_resets
+
   # Static Pages
   match '/admin', to: 'static_pages#admin'
   match '/about', to: 'static_pages#about'

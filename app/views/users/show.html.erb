@@ -1,6 +1,14 @@
 <% provide(:title, @user.email ) %>
-<h1><%= @user.email %></h1> 
-<p>Admin: <%= @user.admin %></p>
-<% if can? :update, @user %>
-	<%= link_to "Edit Account", edit_user_path(@user) %>
-<% end %>
+<div class="row">
+  <div class="span6 offset3">
+    <h2><%= @user.email %></h2>
+    <p>
+      <strong>Name:</strong> <%= @user.first_name %> <%= @user.last_name %> <br />
+      <strong>Position:</strong> <%= @user.position %> <br />
+      <strong>Admin:</strong> <%= @user.admin %>
+    </p>
+    <% if can? :update, @user %>
+      <%= link_to "Edit Account", edit_user_path(@user) %>
+    <% end %>
+  </div>
+</div>

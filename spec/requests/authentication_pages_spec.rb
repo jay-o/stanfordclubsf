@@ -12,7 +12,7 @@ describe "Authentication" do
   describe "signin page" do
     before { visit signin_path }
 
-    it { should have_selector('h1',    text: 'Admin Login') }
+    it { should have_selector('h2',    text: 'Admin Login') }
     it { should have_selector('title', text: 'Admin Login') }
   end
 
@@ -99,7 +99,7 @@ describe "Authentication" do
     describe "viewing add user page" do
       before { visit adduser_path }
 
-      it { should have_selector('h1',    text: 'Add User Account') }
+      it { should have_selector('h2',    text: 'Add User Account') }
       it { should have_selector('title', text: full_title('Add User Account')) }
     end
 
@@ -145,42 +145,42 @@ describe "Authentication" do
     describe "viewing admin" do
       before { visit '/admin' }
 
-      it { should have_selector('h1', text: "Admin Login") }
+      it { should have_selector('h2', text: "Admin Login") }
       it { should have_selector('div.alert.alert-error', text: 'Access denied') }
     end
 
     describe "viewing users" do
       before { visit users_path }
 
-      it { should have_selector('h1', text: "Admin Login") }
+      it { should have_selector('h2', text: "Admin Login") }
       it { should have_selector('div.alert.alert-error', text: 'Access denied') }
     end
 
     describe "viewing user edit" do
       before { visit edit_user_path(user) }
 
-      it { should have_selector('h1', text: "Admin Login") }
+      it { should have_selector('h2', text: "Admin Login") }
       it { should have_selector('div.alert.alert-error', text: 'Access denied') }
     end
 
     describe "viewing add user" do
       before { visit adduser_path }
 
-      it { should have_selector('h1', text: "Admin Login") }
+      it { should have_selector('h2', text: "Admin Login") }
       it { should have_selector('div.alert.alert-error', text: 'Access denied') }
     end
 
     describe "viewing add event page" do
       before { visit new_event_path }
 
-      it { should have_selector('h1', text: "Admin Login") }
+      it { should have_selector('h2', text: "Admin Login") }
       it { should have_selector('div.alert.alert-error', text: 'Access denied') }
     end
 
     describe "viewing edit event page" do
       before { visit edit_event_path(event) }
 
-      it { should have_selector('h1', text: "Admin Login") }
+      it { should have_selector('h2', text: "Admin Login") }
       it { should have_selector('div.alert.alert-error', text: 'Access denied') }
     end
   end

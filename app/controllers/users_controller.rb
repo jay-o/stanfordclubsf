@@ -6,9 +6,10 @@ class UsersController < ApplicationController
 
   def create
     if @user.save
-      flash[:notice] = "User Sucessfully Created: #{@user.email}"
+      flash[:success] = "User Sucessfully Created: #{@user.email}"
       redirect_to admin_path
     else
+      flash[:error] = "User not created"
       render 'new'
     end
   end 
@@ -21,9 +22,10 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes(params[:user])
-      flash[:notice] = "Profile updated"
+      flash[:success] = "Profile updated: #{@user.email}"
       redirect_to admin_path
     else
+      flash[:notice] = "User not updated"
       render 'edit'
     end
   end
