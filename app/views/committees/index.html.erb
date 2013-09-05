@@ -1,6 +1,23 @@
-<h1>Committees</h1>
-<ol>
-	<% @committees.each do |committee| %>
-		<li><%= link_to committee.name, committee %></li>
-	<% end %>
-</ol>
+<% provide(:title, 'Committees') %>
+<div class="hero">
+  <%= image_tag("scsf_hero_1170x230.jpg") %>
+</div>
+<div class="row">
+  <div class="span12">
+    <h2>SCSF Committees</h2>
+    <ul class="thumbnails">
+      <% @committees.each do |committee| %>
+      <li class="span3">
+          <div class="thumbnail committee_list">
+              <%= link_to image_tag("http://placehold.it/300x200"), committee %>
+            <div class="caption">
+              <h4><%= link_to committee.name, committee %></h4>
+              <p><%= committee.description %></p>
+              <%= link_to "See Upcoming Events", committee %>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
