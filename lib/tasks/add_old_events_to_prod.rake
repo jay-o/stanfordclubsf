@@ -2,13 +2,8 @@
 namespace :db do
   desc "Fill database with old events"
   task prod_seed_old_events: :environment do
-    remove_old_events
     add_old_events
   end 
-end
-
-def remove_old_events
-  Event.find_each(&:destroy)
 end
 
 def add_old_events
