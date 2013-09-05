@@ -1,3 +1,6 @@
+<div class="hero">
+  <%= image_tag("scsf_hero_1170x230.jpg") %>
+</div>
 <div class="row">
   <div class="span7">
     <%= render 'events/events_feed' %>
@@ -5,7 +8,7 @@
   <div class="span4 offset1 sidebar">
     <div class="widget">
       <div class="top-bar">
-        <h4>Event Committees</h4>
+        <h4><%= link_to "Event Committees", committees_path %></h4>
       </div>
       <div class="content">
         <ul class="committee-list">
@@ -13,6 +16,7 @@
           <li><%= link_to committee.name, committee %></li>
         <% end %>
         </ul>
+        <%= link_to " View All Committees", committees_path, class: 'more icon-chevron-sign-right' %>
       </div>
     </div>
     <%= render 'shared/join_scsf' %>

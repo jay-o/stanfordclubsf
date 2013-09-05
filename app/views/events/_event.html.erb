@@ -32,6 +32,5 @@
 </div>
 <div class="description">
   <%= simple_format(truncate(event.description, length: 500, separator: '.', omission: '.')) %>
-  <%= link_to "Learn more", event %> 
-  <i class="icon-double-angle-right"></i>
+  <%= link_to " Learn more", event, class: "btn btn-success icon-info-sign" %>
 </div>

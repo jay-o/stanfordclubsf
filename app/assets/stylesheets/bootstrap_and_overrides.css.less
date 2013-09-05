@@ -53,7 +53,6 @@ body {
   background-color: @gray-bg-lighter;
 }
 
-
 // Headings
 h1 {
   font-size: 36px;
@@ -74,6 +73,7 @@ h4 {
 -------------------------------------------------- */
 .navbar-inner {
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#a61919), to(#8C1515));
+  border-bottom: 1px solid #8C1515;
   color: #fff;
 }
 .navbar .nav > li > a {
@@ -86,6 +86,7 @@ h4 {
 }
 
 .navbar .brand {
+  padding-left: 30px;
   color: #ffffff;
   text-shadow: 1px 1px 1px #000;
   font-family: 'Crimson Text', serif;
@@ -97,9 +98,14 @@ h4 {
 /* -----------------------------------------------
 -- Layouts
 -------------------------------------------------- */
+// Hero
+.hero {
+  margin-top: 40px;
+}
+
 // Sidebar
 .sidebar {
-  padding-top: 80px;
+  padding-top: 70px;
 }
 
 // Footer
@@ -138,11 +144,16 @@ h4 {
 .widget {
   background-color: @gray-bg-darker;
   border-bottom: 4px solid @beige-border;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   .top-bar {
     padding: 10px 20px;
     background-color: #e6e4db;
-    border-bottom: 1px solid darken(#e6e4db, 10%)
+    border-bottom: 1px solid darken(#e6e4db, 10%);
+    h4 {
+      a {
+        color: #333333;
+      }
+    }
   }
   .content {
     padding: 10px 20px;
@@ -151,8 +162,13 @@ h4 {
     margin: 10px auto;
     text-align: center;
   }
+  a.more {
+    // font-size: 30px;
+    color: #333333;
+  }
   ul.committee-list {
     margin: 0;
+    margin-bottom: 10px;
     list-style-type: none;
     li {
       line-height: 28px;
@@ -178,10 +194,10 @@ h4 {
   border-bottom: 4px solid #8C1515;
 }
 .event {
-  margin-bottom: 40px;
-  padding: 0 15px 40px 15px;
+  margin-bottom: 10px;
+  padding: 0 15px 80px 15px;
   // background-color: #eee;
-  border-bottom: 1px dotted #ddd;
+  border-bottom: 1px solid #ccc;
   h2 a {
     margin: 10px 0 5px 0;
     color: @cardinal-text;
@@ -203,8 +219,13 @@ h4 {
     margin-top: 10px;
     clear: both;
     padding-left: 60px;
+    a {
+      clear: both;
+      margin-top: 50px;
+      text-shadow: none;
+      font-weight: bold;
+    }
   }
-
 }
 
 
