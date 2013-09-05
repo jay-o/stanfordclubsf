@@ -13,7 +13,7 @@ def add_old_events
       { 
         name:             "Sake Tasting in the Presidio",
         committee_id:     "5",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-08-17",
         start_time:       "4:30 PM",
         cost_member:      "55",
@@ -28,7 +28,7 @@ def add_old_events
       { 
         name:             "Stanford Jazz Festival - Second Night",
         committee_id:     "1",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-08-10",
         start_time:       "6:45 pm",
         cost_member:      "85",
@@ -57,7 +57,7 @@ His group, Irakere, which he founded in 1973, launched the careers of several ot
       { 
         name:             "Stanford Jazz Festival - First Night",
         committee_id:     "1",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-08-03",
         start_time:       "6:15 pm",
         end_time:         "10:00 PM",
@@ -92,7 +92,7 @@ He's made his mark starring in movies by Spike Lee and Barbara Streisand, partic
       {
         name:             "Stanford at the San Francisco Food Bank",
         committee_id:     "3",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-08-06",
         start_time:       "6:00PM",
         end_time:         "8:00PM",
@@ -106,7 +106,7 @@ He's made his mark starring in movies by Spike Lee and Barbara Streisand, partic
       {
         name:             "Volunteer at the National AIDS Memorial Grove",
         committee_id:     "3",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-06-15",
         start_time:       "9:00AM",
         end_time:         "1:00PM",
@@ -123,7 +123,7 @@ The mission of the National AIDS Memorial Grove is to provide, in perpetuity, a 
       {
         name:             "Crissy Field 5K Run 2013",
         committee_id:     "8",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-06-02",
         start_time:       "8:30AM",
         end_time:         "11:00AM",
@@ -146,7 +146,7 @@ We will likely meet up at the Sports Basement (610 Mason Street) near the event 
       {
         name:             "Salsa dance class and party at Cocomo in Potrero",
         committee_id:     "6",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-05-16",
         start_time:       "7:00PM",
         end_time:         "10:00PM",
@@ -161,7 +161,7 @@ We will likely meet up at the Sports Basement (610 Mason Street) near the event 
       {
         name:             "Fete de la Musique - Soltice music night!",
         committee_id:     "5",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-06-21",
         start_time:       "6:30PM",
         end_time:         "9:30PM",
@@ -176,7 +176,7 @@ We will likely meet up at the Sports Basement (610 Mason Street) near the event 
       {
         name:             "East Palo Alto - Reading Rainbow in the Park",
         committee_id:     "3",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-05-18",
         start_time:       "9:00AM",
         end_time:         "4:00PM",
@@ -198,7 +198,7 @@ tui3@stanfordalumni.org"
       {
         name:             "Wine Pairing & Dinner at Marine's Memorial",
         committee_id:     "5",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-04-20",
         start_time:       "6:30PM",
         end_time:         "9:00PM",
@@ -218,7 +218,7 @@ Entree selections:
       {
         name:             "Russ Feingold Talks with the Stanford Club of San Francisco",
         committee_id:     "7",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-05-23",
         start_time:       "7:00PM",
         end_time:         "9:00PM",
@@ -240,7 +240,7 @@ Feingold is also the author of the New York Times bestseller While America Sleep
       {
         name:             "Farm-to-Table Luncheon at Willow Farm - SOLD OUT",
         committee_id:     "5",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-06-15",
         start_time:       "1:00PM",
         end_time:         "3:00PM",
@@ -274,7 +274,7 @@ Dessert
       {
         name:             "Stanford Job Seekers' Monthly Meeting",
         committee_id:     "2",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-03-20",
         start_time:       "5:00PM",
         end_time:         "6:00PM",
@@ -288,7 +288,7 @@ Dessert
       {
         name:             "Stanford Job Seekers' Monthly Meeting",
         committee_id:     "2",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-01-29",
         start_time:       "5:00PM",
         end_time:         "6:00PM",
@@ -302,7 +302,7 @@ Dessert
       {
         name:             "Stanford Job Seekers' Monthly Meeting",
         committee_id:     "2",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-02-26",
         start_time:       "5:00PM",
         end_time:         "6:00PM",
@@ -316,7 +316,7 @@ Dessert
       {
         name:             "Save the Bay",
         committee_id:     "3",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-03-23",
         start_time:       "9:00AM",
         end_time:         "12:00PM",
@@ -330,7 +330,7 @@ Dessert
       {
         name:             "Urban Agriculture Classes",
         committee_id:     "3",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-03-16",
         start_time:       "12:00PM",
         end_time:         "5:00PM",
@@ -349,7 +349,7 @@ Lunch break from 1:00pm - 2:00pm
       {
         name:             "Land's End Hike",
         committee_id:     "8",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-03-03",
         start_time:       "12:00PM",
         end_time:         "5:00PM",
@@ -367,7 +367,7 @@ Bring the camera, and don't miss out on this wonderful opportunity."
       {
         name:             "Mushroom Foraging",
         committee_id:     "5",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-03-10",
         start_time:       "9:00AM",
         end_time:         "2:00PM",
@@ -381,7 +381,7 @@ Bring the camera, and don't miss out on this wonderful opportunity."
       {
         name:             "Networking and Organic Wine Tasting",
         committee_id:     "6",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-01-24",
         start_time:       "6:00PM",
         end_time:         "10:00PM",
@@ -399,7 +399,7 @@ We'll mingle during happy hour and plan to begin the tasting around 7p. After th
       {
         name:             "Stanford Professor Leonard Susskind",
         committee_id:     "6",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-02-05",
         start_time:       "6:00PM",
         end_time:         "7:00PM",
@@ -419,7 +419,7 @@ Ever wish you knew more about physics? Want to know how to think like a physicis
       {
         name:             "Valentine's Aphrodisiacs Cooking Class - SOLD OUT",
         committee_id:     "5",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-02-10",
         start_time:       "6:00PM",
         end_time:         "9:00PM",
@@ -433,7 +433,7 @@ Ever wish you knew more about physics? Want to know how to think like a physicis
       {
         name:             "Broadway's 'Golden Couple' in concert at The Fairmont",
         committee_id:     "1",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-02-17",
         start_time:       "5:30PM",
         end_time:         "9:00PM",
@@ -447,7 +447,7 @@ Ever wish you knew more about physics? Want to know how to think like a physicis
       {
         name:             "Hands-on Bread Making Workshop - SOLD OUT",
         committee_id:     "5",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-02-24",
         start_time:       "1:30PM",
         end_time:         "3:30PM",
@@ -461,7 +461,7 @@ Ever wish you knew more about physics? Want to know how to think like a physicis
       {
         name:             "The Board Match by the Volunteer Center of San Francisco",
         committee_id:     "3",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-02-27",
         start_time:       "5:30PM",
         end_time:         "7:30PM",
@@ -477,7 +477,7 @@ Serving on a nonprofit board can provide fantastic opportunities for your person
       {
         name:             "Speaker Event with Dr. Larry Diamond",
         committee_id:     "7",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-02-28",
         start_time:       "5:00PM",
         end_time:         "8:30PM",
@@ -497,7 +497,7 @@ Larry Diamond, '73, MA '78, PhD '80, is a senior fellow at the Hoover Institutio
       {
         name:             "Kouign Amann Pastry Class",
         committee_id:     "5",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-03-16",
         start_time:       "1:00PM",
         end_time:         "3:00PM",
@@ -511,7 +511,7 @@ Larry Diamond, '73, MA '78, PhD '80, is a senior fellow at the Hoover Institutio
       {
         name:             "'Beyond the Farm' global day of service",
         committee_id:     "3",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-03-16",
         start_time:       "1:00PM",
         end_time:         "3:00PM",
@@ -525,7 +525,7 @@ Larry Diamond, '73, MA '78, PhD '80, is a senior fellow at the Hoover Institutio
       {
         name:             "Classic Cocktails Class with SF Mixology - SOLD OUT",
         committee_id:     "5",
-        event_state_id:   "3",
+        event_state_id:   "1",
         start_date:       "2013-04-25",
         start_time:       "6:00PM",
         end_time:         "8:00PM",
