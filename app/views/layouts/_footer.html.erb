@@ -32,12 +32,12 @@
     <div class="row">
       <div class="span12">
         <center>
-          &copy; <%= Time.now.strftime("%Y") %> Stanford Club of San Francisco |
-          <% if signed_in? %>  
-            <%= link_to "Admin Tools", admin_path %>
-          <% else %>  
-            <%= link_to "Admin Login", signin_path %>
-          <% end %>
+          <small>&copy; <%= Time.now.strftime("%Y") %> Stanford Club of San Francisco |
+            <% if signed_in? %>  
+              <%= link_to "Admin Tools", admin_path %>
+            <% else %>  
+              <%= link_to "Admin Login", signin_path %>
+            <% end %></small>
         </center>
       </div>
     </div>
