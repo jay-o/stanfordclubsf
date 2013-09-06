@@ -6,19 +6,7 @@
     <%= render 'events/events_feed' %>
   </div>
   <div class="span4 offset1 sidebar">
-    <div class="widget">
-      <div class="top-bar">
-        <h4><%= link_to "Event Committees", committees_path %></h4>
-      </div>
-      <div class="content">
-        <ul class="committee-list">
-        <% @committees.each do |committee| %>
-          <li><%= link_to committee.name, committee %></li>
-        <% end %>
-        </ul>
-        <%= link_to " View All Committees", committees_path, class: 'more icon-chevron-sign-right' %>
-      </div>
-    </div>
+    <%= render 'shared/committees_list' %>
     <%= render 'shared/join_scsf' %>
   </div>
 </div>
