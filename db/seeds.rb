@@ -22,7 +22,7 @@ admin = User.create!( first_name: "Admin",
 			                state: 			"Active",
 			                committee_id: "1",
 			                password:   "stanford",
-			                password_confirmation: "foobar")
+			                password_confirmation: "stanford")
 
 
 Committee.create!([
