@@ -16,12 +16,12 @@ admin = User.create!( first_name: "Admin",
 			                password_confirmation: "foobar")
 			  admin.toggle!(:admin)
 
-			  User.create!( first_name: "Active",
+			  User.create!( first_name: "Test",
 			                last_name:  "User",
 			                email:      "user@test.com",
 			                state: 			"Active",
 			                committee_id: "1",
-			                password:   "foobar",
+			                password:   "stanford",
 			                password_confirmation: "foobar")
 
 
