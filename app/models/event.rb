@@ -33,36 +33,36 @@
 
 class Event < ActiveRecord::Base
   attr_accessible :name,  
-	      					:start_date, 
-	      					:start_time,
-	      					:end_date,
-	                :end_time,
-	      					:address,
-	      					:description,
-	      					:registration_url,
-	      					:committee_id,
-	      					:cost_member,
-	      					:cost_guest,
+                  :start_date, 
+                  :start_time,
+                  :end_date,
+                  :end_time,
+                  :address,
+                  :description,
+                  :registration_url,
+                  :committee_id,
+                  :cost_member,
+                  :cost_guest,
                   :cost_young_alumn,
-	      					:capacity,
-	      					:committee_id,
-	      					:image_id,
-	      					:organizer,
-	      					:organizer_email,
-	      					:sold_out,
-	                :featured,
-	      					:created_by,
-	      					:last_updated_by,
-	                :event_state_id,
-	                :longitude,
-	                :latitude,
-	                :slug
+                  :capacity,
+                  :committee_id,
+                  :image_id,
+                  :organizer,
+                  :organizer_email,
+                  :sold_out,
+                  :featured,
+                  :created_by,
+                  :last_updated_by,
+                  :event_state_id,
+                  :longitude,
+                  :latitude,
+                  :slug
 
-  belongs_to	:event_state
-  belongs_to 	:committee
+  belongs_to  :event_state
+  belongs_to  :committee
 
   before_validation :generate_slug
-  validates	:slug, presence: true, uniqueness: true
+  validates :slug, presence: true, uniqueness: true
 
   # Draft Validations
   validates :name, :committee_id, :start_date, :start_time, :event_state_id, presence: true

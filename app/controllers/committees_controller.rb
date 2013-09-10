@@ -10,7 +10,7 @@ class CommitteesController < ApplicationController
 
   def show
     @upcoming_events = Event.where("start_date >= ?", Time.now.to_date ).where('committee_id = ?', @committee).order("start_date")
-    @recent_events = Event.where("start_date >= ? and start_date < ?", 3.months.ago.to_date, Time.now.to_date ).where('committee_id = ?', @committee).order("start_date desc")
+    @recent_events = Event.where("start_date >= ? and start_date < ?", 3.months.ago.to_date, Time.now.to_date ).where('committee_id = ?', @committee).order("start_date desc").limit(5)
   end
 
   def edit

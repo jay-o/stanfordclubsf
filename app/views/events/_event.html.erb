@@ -1,9 +1,15 @@
 <% if event.start_date < Time.now.to_date %>
   <div class="event-status">
-    <h4>Registration Closed</h4>
+    <h4>Past Event</h4>
   </div>
 <% end %>
-<h2><%= link_to event.name, event %></h2>
+<h2>
+  <% if event.sold_out? %> 
+    <%= link_to "#{event.name.titleize} &ndash; SOLD OUT".html_safe, event %>
+  <% else %>
+    <%= link_to event.name.titleize, event %>
+  <% end %>
+</h2>
 <div class="date-icon">
   <%= event.start_date.strftime("%b") unless event.start_date == nil %><br />
   <%= event.start_date.strftime("%d") unless event.start_date == nil %>
@@ -13,7 +19,7 @@
     <%= event.start_date.strftime("%A, %B %d") unless event.start_date == nil %>,
     <%= event.start_time.upcase %> 
     <% unless event.end_time.blank? %>  
-      &ndash; <%= event.end_time %>  
+      &ndash; <%= event.end_time.upcase %>  
     <% end %>
   </strong>
   <br>
@@ -25,7 +31,7 @@
     Members <%= "$#{event.cost_member}" %>
   <% end %>
   <% if event.cost_young_alumn.upcase == "FREE" %>
-    <%= ", Young Alumni#{event.cost_young_alumn.titleize}" %>
+    <%= ", Young Alumni #{event.cost_young_alumn.titleize}" %>
   <% else %>
     <%= ", Young Alumni $#{event.cost_young_alumn}" %>
   <% end %>
@@ -36,6 +42,6 @@
   <% end %>
 </div>
 <div class="description">
-  <%= simple_format(truncate(event.description, length: 500, separator: '.', omission: '.')) %>
+  <%= simple_format(truncate(event.description, length: 275, separator: '.', omission: '.')) %>
   <%= link_to " Learn more", event, class: "btn btn-success icon-info-sign" %>
 </div>
