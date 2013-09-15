@@ -9,7 +9,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(params[:event])
     if @event.save
-      flash[:notice] = "Event Sucessfully Created: #{@event.name}"
+      flash[:success] = "Event Sucessfully Created: #{@event.name}"
       redirect_to @event
     else
       render 'new'

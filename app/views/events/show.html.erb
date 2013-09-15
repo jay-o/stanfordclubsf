@@ -21,7 +21,7 @@
       <h3 class="event-header">Location</h3>
       <p>
         <%= @event.address.to_s %> &mdash; 
-        <%= link_to "Get directions to #{@event.name.titleize}", "https://maps.google.com/maps?daddr=#{@event.address}", target: "_blank" %>
+        <%= link_to "Get directions", "https://maps.google.com/maps?daddr=#{@event.address}", target: "_blank" %>
       </p>
       <% if @event.longitude.present? && @event.latitude.present?  %>
         <%= link_to image_tag("http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=13&markers=#{@event.latitude}%2C#{@event.longitude}"), "https://maps.google.com/maps?daddr=#{@event.address}", :target => "blank" %>
