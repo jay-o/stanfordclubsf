@@ -4,9 +4,9 @@ class MessageMailer < ActionMailer::Base
 
   def contact_us(message)
     @message = message
-    mail  to: ENV['ADMIN_EMAIL_ADDRESS'],
-          cc: @message.email,
+    mail  to: @message.email
+          bcc: ENV['ADMIN_EMAIL_ADDRESS'],
           reply_to: @message.email,
-          subject: "SCSF Contact us from #{@message.email}"
+          subject: "Thanks for contacting the SCSF."
   end
 end
