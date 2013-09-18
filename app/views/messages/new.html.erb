@@ -1,0 +1,31 @@
+<div class="hero">
+  <%= image_tag("scsf_hero_1170x230.jpg") %>
+</div>
+<div class="row">
+  <div class="span2 side-nav">
+    <%= render 'layouts/about_sidenav' %>
+  </div>
+  <div class="span8">
+    <h1>Contact Us</h1>
+    <%= simple_form_for @message, :html => {:class => 'form-horizontal' } do |f| %>
+      <div class="row">
+        <div class="span4">
+          <%= f.input :name %>
+        </div>
+        <div class="span4">
+          <%= f.input :email %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span8">
+          <%= f.input :message, as: :text %>  
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3 offset2">
+          <%= f.submit 'Send Message', :class => 'btn btn-danger' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

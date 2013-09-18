@@ -21,6 +21,9 @@ Stanfordclubsf::Application.routes.draw do
   # Password reset
   resources :password_resets
 
+  # Messages
+  resources :messages
+
   # Static Pages
   match '/admin', to: 'static_pages#admin'
   match '/about', to: 'static_pages#about'

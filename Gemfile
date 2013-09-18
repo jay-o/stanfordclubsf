@@ -9,6 +9,7 @@ gem 'geocoder'
 gem 'jquery-ui-rails'
 gem 'annotate'
 gem 'thin'
+gem 'active_attr'
 
 group :test do
   gem 'capybara',   '1.1.2'
