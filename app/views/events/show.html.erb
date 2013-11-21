@@ -101,7 +101,7 @@
         </table>
       </div>
       <div class="center-button">
-        <% if @event.start_date > Time.now.to_date %>
+        <% if @event.start_date >= Time.now.to_date %>
           <a href="<%= "#{@event.registration_url}" %>" class='btn btn-danger'><i class="icon-check-sign"></i> RSVP </a>
         <% else %>
           <span class='btn btn-inverse recent'><i class="icon-ban-circle"></i> Registration Closed </span>
