@@ -66,13 +66,13 @@ ActiveRecord::Schema.define(:version => 20130904220521) do
     t.string   "last_name"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
     t.string   "remember_token"
     t.boolean  "admin",                  :default => false
     t.string   "position"
     t.integer  "committee_id"
-    t.string   "state"
+    t.string   "state",                  :default => "Active"
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
   end
