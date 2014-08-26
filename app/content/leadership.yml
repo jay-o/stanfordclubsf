@@ -15,9 +15,9 @@ committees:
   food:
     name:   "Food & Wine"
     chairs: ["Olivia Witter"]
-  social:
-    name:   "Social & Networking"
-    chairs: [""]
+#  social:
+#    name:   "Social & Networking"
+#    chairs: [""]
   speaker:
     name:   "Speaker Events"
     chairs: ["Ji Hea Kim"]
