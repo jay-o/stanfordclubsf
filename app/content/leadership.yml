@@ -2,47 +2,50 @@
 committees:
   arts:
     name: "Arts, Culture, Science"
-    chairs: [""]
-  career:
-    name:   "Career Advancement"
-    chairs: ["Shawn Salmon"]
+    chairs: ["Ernestine Fu"]
+#  career:
+#    name:   "Career Advancement"
+#    chairs: ["Shawn Salmon"]
   community:
     name:   "Community Service & Philanthropy"
-    chairs: ["Julie Whitcomb","Adam Bad Wound"]
+    chairs: ["Rujuta Parikh", "Suzanne Huang"]
   design:
     name:   "Design & Innovation"
-    chairs: ["Jacky Chow", "Robert Ash"]
+    chairs: ["Elissa Flandro", "Christina Cho Yoo", "Bernard Lee"]
   food:
     name:   "Food & Wine"
-    chairs: ["Laurel Skurko", "Alejandra Villalobos"]
+    chairs: ["Olivia Witter"]
   social:
     name:   "Social & Networking"
-    chairs: ["Gaetano Squicciarini"]
+    chairs: [""]
   speaker:
     name:   "Speaker Events"
-    chairs: ["Alvin Barlian", "Olympia Nguyen"]
+    chairs: ["Ji Hea Kim"]
   sports:
     name:   "Sports & Recreation"
-    chairs: ["Nicholas Magguli"]
+    chairs: ["Nicholas Magguli", "Kelley Birch"]
 
 directors:
   newsletter: 
     name:   "Newsletter Editor"
-    chairs: ["Emma Trotter" , "Ellen Huet", "Victor Liu"]
-  venues:
-    name:   "Venue Director" 
-    chairs: ["Greg Martellotto"]
+    chairs: ["Victor Liu", "Lee Hsu"]
+  partnerships:
+    name:   "Partnerships"
+    chairs: ["Jan Piotrowski"]
+  membership:
+    name:   "Membership"
+    chairs: ["Adam Bad Wound"]
 
 executive:
   prez: 
     name:   "President"
-    chairs: ["Nancy Taylor"]
+    chairs: ["Julie Whitcomb"]
   events:
     name:   "VP of Events" 
-    chairs: ["Marlayna Tuiasosopo"]
+    chairs: ["Min Liu"]
   money:
     name:   "Treasurer" 
-    chairs: ["Dan Sanchez"]
+    chairs: ["Michael Ding"]
   cio:
     name:   "CIO" 
     chairs: ["Jay Ottovegio"]
