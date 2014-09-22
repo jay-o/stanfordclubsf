@@ -23,7 +23,7 @@ committees:
     chairs: ["Ji Hea Kim"]
   sports:
     name:   "Sports & Recreation"
-    chairs: ["Nicholas Magguli", "Kelley Birch"]
+    chairs: ["Nicholas Maggiulli", "Kelley Birch"]
 
 directors:
   newsletter: 
@@ -49,3 +49,6 @@ executive:
   cio:
     name:   "CIO" 
     chairs: ["Jay Ottovegio"]
+  cio:
+    name:   "Secretary"
+    chairs: ["Dan Sanchez"]
