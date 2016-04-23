@@ -71,8 +71,8 @@ Stanfordclubsf::Application.configure do
   config.action_mailer.smtp_settings = {
       :port =>           '587',
       :address =>        'smtp.mandrillapp.com',
-      :user_name =>      ENV['MAILGUN_USERNAME'],
-      :password =>       ENV['MAILGUN_APIKEY'],
+      :user_name =>      ENV['MANDRILL_USERNAME'],
+      :password =>       ENV['MANDRILL_APIKEY'],
       :domain =>         'heroku.com',
       :authentication => :plain
   }
