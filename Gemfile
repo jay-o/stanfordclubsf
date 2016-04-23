@@ -2,14 +2,15 @@ source 'https://rubygems.org'
 ruby '1.9.3'
 
 gem 'rails',        '3.2.13'
+gem 'active_attr'
+gem 'annotate'
 gem 'bcrypt-ruby',  '3.0.1'
 gem "cancan",       '1.6.10'
-gem 'simple_form',  '2.1.0'
 gem 'geocoder'
 gem 'jquery-ui-rails'
-gem 'annotate'
+gem 'mailgun-ruby'
+gem 'simple_form',  '2.1.0'
 gem 'thin'
-gem 'active_attr'
 
 group :test do
   gem 'capybara',   '1.1.2'
@@ -26,10 +27,10 @@ group :development, :test do
 end
 
 group :development do
-  gem 'better_errors'
+  gem 'better_errors', '1.1.0'
   gem 'binding_of_caller'
   gem 'meta_request'
-  gem "letter_opener"
+  gem 'letter_opener'
 end
 
 # Gems used only for assets and not required
@@ -40,14 +41,11 @@ group :assets do
   gem 'uglifier',     '1.2.3'
   gem "therubyracer"
   gem "less-rails"
-  gem "twitter-bootstrap-rails"
+  gem "twitter-bootstrap-rails", '2.2.8'
 end
 
 gem 'jquery-rails', '2.0.2'
 
-group :test do
-  gem 'capybara', '1.1.2'
-end
 
 group :production do
   gem 'pg', '0.12.2'
