@@ -65,7 +65,7 @@ Stanfordclubsf::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  config.action_mailer.default_url_options = { :host => "www.stanfordclubsf.org" }  
+  config.action_mailer.default_url_options = { :host => "www.stanfordclubsf.org" }
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
@@ -73,7 +73,7 @@ Stanfordclubsf::Application.configure do
       :address        => ENV['MAILGUN_SMTP_SERVER'],
       :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
       :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-      :domain         => ENV['MAILGUN_DOMAIN'],
+      :domain         => 'DOMAIN',
       :authentication => :plain,
   }
   
